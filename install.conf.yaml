@@ -1,0 +1,28 @@
+- shell:
+  - [git submodule update --init --recursive, '🔃 Updating submodules']
+
+- defaults:
+    link:
+      create: true # create parent directories to the link as needed
+      relink: true # removes the old target if it's a symlink
+
+- clean:
+    ~/:
+      force: true # remove ALL dead symlinks (even if pointing outside .dotfiles)
+    ~/.config/:
+      recursive: true
+
+- create:
+    ~/.ssh/:
+      mode: 0700
+
+- link:
+    # dotfiles
+    ~/.gitconfig: gitconfig
+    ~/.zshrc:
+      force: true
+      path: zshrc
+    # dotdirectories
+    ~/.hammerspoon:
+      if: '[ `uname` = Darwin ]'
+      path: hammerspoon
