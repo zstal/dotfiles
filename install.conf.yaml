@@ -1,0 +1,33 @@
+- shell:
+  - [git submodule update --init --recursive, 'Updating submodules...']
+
+- create:
+    ~/.config/:
+      mode: 0700
+    ~/.ssh/:
+      mode: 0700
+
+- defaults:
+    link:
+      create: true # create parent directories to the link as needed
+      relink: true # removes the old target if it's a symlink
+
+- clean:
+    ~/:
+      force: true # remove ALL dead symlinks (even if pointing outside .dotfiles)
+    ~/.config/:
+      recursive: true
+
+- link:
+    ~/.gitconfig:
+      path: git/gitconfig
+    ~/.hammerspoon:
+      path: hammerspoon/
+    ~/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings:
+      path: sublime-text/Preferences.sublime-settings
+    ~/Library/Application Support/Sublime Text/Packages/User/Snippets:
+      path: sublime-text/Snippets/
+    ~/Library/Developer/Xcode/UserData/IDETemplateMacros.plist:
+      path: xcode/IDETemplateMacros.plist
+    ~/.zshrc:
+      path: zsh/zshrc
