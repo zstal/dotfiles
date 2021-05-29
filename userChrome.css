@@ -1,0 +1,23 @@
+/* hides the native tabs but leaves window buttons */
+#tabbrowser-tabs {
+  visibility: collapse;
+}
+
+/* remove Tree Style Tabs header */
+#sidebar-header {
+  visibility: collapse;
+}
+
+/*
+ * PRIVATE BROWSING
+*/
+
+#main-window[privatebrowsingmode="temporary"]
+#tabbrowser-tabs {
+  visibility: visible;
+}
+
+#main-window[privatebrowsingmode="temporary"]
+#nav-bar {
+	  background-color: #8000D7 !important;
+}
