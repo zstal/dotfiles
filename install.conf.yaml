@@ -1,5 +1,11 @@
 - shell:
-  - [git submodule update --init --recursive, '🔃 Updating submodules']
+  - [git submodule update --init --recursive, 'Updating submodules...']
+
+- create:
+    ~/.config/:
+      mode: 0700
+    ~/.ssh/:
+      mode: 0700
 
 - defaults:
     link:
@@ -11,10 +17,6 @@
       force: true # remove ALL dead symlinks (even if pointing outside .dotfiles)
     ~/.config/:
       recursive: true
-
-- create:
-    ~/.ssh/:
-      mode: 0700
 
 - link:
     # dotfiles
