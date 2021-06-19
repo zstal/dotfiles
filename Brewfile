@@ -43,7 +43,6 @@ cask 'keepingyouawake'
 cask 'netnewswire'
 cask 'rectangle'
 cask 'sensiblesidebuttons'
-cask 'skitch'
 cask 'standard-notes'
 cask 'sublime-text' # CLI: /usr/local/bin/subl
 cask 'transmission'
