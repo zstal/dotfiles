@@ -28,3 +28,6 @@
     ~/.hammerspoon:
       if: '[ `uname` = Darwin ]'
       path: hammerspoon
+    # Xcode
+    ~/Library/Developer/Xcode/UserData/IDETemplateMacros.plist:
+      path: IDETemplateMacros.plist
