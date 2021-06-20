@@ -117,6 +117,7 @@ alias hammerspoonrc="subl ~/.hammerspoon/init.lua"
 #
 alias brewup="brew update && brew upgrade"
 alias bundleid="/usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier'"
+alias restartaudio="sudo launchctl stop com.apple.audio.coreaudiod && sudo launchctl start com.apple.audio.coreaudiod"
 
 #
 # general
