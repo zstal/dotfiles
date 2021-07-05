@@ -43,6 +43,7 @@ cask 'itsycal'
 cask 'keepingyouawake'
 cask 'netnewswire'
 cask 'rectangle'
+cask 'selfcontrol'
 cask 'sensiblesidebuttons'
 cask 'standard-notes'
 cask 'sublime-text' # CLI: /usr/local/bin/subl
