@@ -3,20 +3,20 @@ tap 'homebrew/cask'
 # install apps for the current user only
 cask_args appdir: '~/Applications'
 
-cask '1password'
 cask 'alfred'
 cask 'appcleaner'
 cask 'firefox'
-cask 'fork' # CLI: "$(brew --prefix)/bin/fork"
+cask 'fork'
 cask 'hammerspoon'
-cask 'iina' # CLI: "$(brew --prefix)/bin/iina"
+cask 'iina'
 cask 'iterm2'
 cask 'itsycal'
+cask 'maestral'
 cask 'netnewswire'
-cask 'selfcontrol'
-cask 'sensiblesidebuttons'
-cask 'standard-notes'
-cask 'sublime-text' # CLI: "$(brew --prefix)/bin/subl"
-cask 'suspicious-package'
+cask 'rectangle'
+cask 'sublime-text'
 cask 'transmission'
-cask 'visual-studio-code' # CLI: "$(brew --prefix)/bin/code"
+cask 'visual-studio-code'
+cask 'xcodes'
+
+# MAS: Hyperduck, PDFCombo, WireGuard, Xnip

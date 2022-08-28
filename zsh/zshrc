@@ -1,107 +1,49 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# --------------------
+#
+# ZSH CONFIG
+#
+# --------------------
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Always reply YES and automatically upgrade.
-export DISABLE_UPDATE_PROMPT=true
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="apple"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git z)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
+#
+# case-insensitive completion
+#
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+#
+# version control info
+#
+autoload -Uz vcs_info
+# Enable checking for (un)staged changes, enabling use of %u and %c
+zstyle ':vcs_info:*' check-for-changes true
+# Set custom strings for an unstaged vcs repo changes (*) and staged changes (+)
+zstyle ':vcs_info:*' unstagedstr ' *'
+zstyle ':vcs_info:*' stagedstr ' +'
+# Set the format of the Git information for vcs_info
+zstyle ':vcs_info:git:*' formats       '(%b%u%c) '
+zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c) '
+precmd() { vcs_info }
+
+#
+# prompt
+#
+setopt PROMPT_SUBST
+PROMPT='%F{cyan}%~%f %F{yellow}${vcs_info_msg_0_}%f%F{red}%(?..[%?] )%f%# '
+
+# preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nano'
+    export EDITOR='nano'
 else
-  export EDITOR='subl -w'
+    export EDITOR='subl -w'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+function include() {
+    # use if to avoid error code return
+    if [[ -f "$1" ]]; then source "$1"; fi
+}
 
 # --------------------
 #
@@ -112,48 +54,154 @@ fi
 #
 # config files
 #
-alias rcfile="subl ~/.zshrc"
-alias hammerspoonrc="subl ~/.hammerspoon/init.lua"
+alias ,hs="subl ~/.hammerspoon/init.lua"
+alias ,local="subl ~/.local.zsh"
+alias ,rc="subl ~/.zshrc"
 
 #
-# system
+# terminal and packages
 #
-alias brewup="brew update && brew upgrade"
-alias bundleid="/usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' Contents/Info.plist"
+alias bruu="brew update && brew upgrade"
+alias hp="history -p && echo '✅ history cleared'"
+
+#
+# file system
+#
+[ -d ~/.dotfiles ] && alias dotf="cd ~/.dotfiles"
+[ -d ~/Desktop ] && alias dt="cd ~/Desktop"
+[ -d ~/Developer ] && alias dev="cd ~/Developer"
+[ -d ~/Downloads ] && alias dl="cd ~/Downloads"
+alias ....="cd ../../.."
+alias ...="cd ../.."
+alias ..="cd .."
+alias l="ls -hlF"
+alias ll="ls -ahlF"
+alias ls="ls --color=auto"
+alias mv="mv -i"
 alias o="open ."
-alias reload="[ -f ~/.zshrc ] && . ~/.zshrc && echo '✅ rcfile reloaded'"
-alias rghist="history | rg -i"
-function rmtrash { mv "$@" ~/.Trash/; }
+alias path="echo $PATH"
+alias rr="[ -f ~/.zshrc ] && . ~/.zshrc && echo '✅ Successfully reloaded .zshrc'"
+alias tt="tree -L 2"
+alias ttt="tree -L 3"
+alias xx='chmod u+x'
+
+function take() {
+    mkdir -p $@ && cd ${@:$#}
+}
 
 #
-# code
+# code tools
 #
-alias f="fork ."
-alias loc="wc -l **/*.swift"
+alias be="bundle exec"
+alias f="fork"
+alias fdd="fd --hidden"
+alias p="bundle exec pod install"
+alias rg="rg --smart-case"
+alias rgg="rg --hidden"
 alias s="subl"
+alias trim-trailing-ws-recursively="perl -pi -e 's/ +$//'"
 alias x="xed ."
+alias xc="xcode-select -p"
+
+function ff() {
+    local OUT=$(fd --hidden | fzf)
+    subl "$OUT"
+}
+
+#
+# git
+#
+alias g="git"
+alias ga="git add"
+alias gaa="git add --all"
+alias gb="git branch"
+alias gc="git commit"
+alias gcb="git checkout -b"
+alias gcd="git checkout develop"
+alias gcl="git clone --recurse-submodules"
+alias gcm="git commit -m"
+alias gd="git diff HEAD"
+alias gf="git fetch"
+alias ghpr="gh pr create --web"
+alias gl="git pull"
+alias glg="git log --stat"
+alias gp="git push"
+alias gpf="git push --force-with-lease"
+alias grv="git remote --verbose"
+alias gss="git status --short"
+alias gst="git status"
+alias gwip="git add -A && git commit -m 'Work In Progress'"
+
+# switch to a local branch
+function gsw() {
+    command git rev-parse --git-dir &> /dev/null || return
+    if [ $# -eq 0 ];
+    then
+        local selected_branch=$(git for-each-ref --format='%(refname:short)' refs/heads | sort | fzf)
+        [ ! -z "$selected_branch" ] && git switch "$selected_branch"
+    else
+        git switch "$@"
+    fi
+}
+
+# switch to a local branch or check out a remote one
+function gswa() {
+    command git rev-parse --git-dir &> /dev/null || return
+    if [ $# -eq 0 ];
+    then
+        local selected_branch=$(git for-each-ref --format='%(refname:short)' refs/{heads,remotes} | sed 's/origin\///' | sort | uniq | fzf)
+        [ ! -z "$selected_branch" ] && git switch "$selected_branch"
+    fi
+}
+
+# delete a local git branch but only if fully merged in its upstream branch or in HEAD if no upstream was set
+function gbd() {
+    command git rev-parse --git-dir &> /dev/null || return
+    if [ $# -eq 0 ];
+    then
+        local selected_branch=$(git for-each-ref --format='%(refname:short)' refs/heads | fzf)
+        [ ! -z "$selected_branch" ] && git branch --delete "$selected_branch"
+    else
+        git branch --delete "$@"
+    fi
+}
+
+function git-default-branch() {
+    basename $(git symbolic-ref --short refs/remotes/origin/HEAD)
+}
+
+function git-reset-to() {
+    local ROOT_COMMIT="$1"
+    [ -z "$ROOT_COMMIT" ] && echo "Missing root branch parameter!" && return -1
+    local CURRENT_BRANCH=$(git branch --show-current)
+    git reset $(git merge-base "$ROOT_COMMIT" "$CURRENT_BRANCH")
+}
+
+function grt() {
+    git-reset-to $(git-default-branch)
+}
+
+function git-stale-branches () {
+    for branch in $(git branch --remotes | grep --invert-match HEAD); do echo -e `git show --format="%ai by %an" $branch | head -n 1` @ $branch; done | sort --reverse
+}
 
 #
 # network
 #
 alias dg="dig +short"
-alias dnsflush="sudo killall -HUP mDNSResponder; sleep 2"
-alias listeningports="lsof -iTCP -sTCP:LISTEN -n -P"
 alias myip='echo $(curl --silent https://ifconfig.me)'
-alias server3="python3 -m http.server"
+alias pyserver="python3 -m http.server"
+alias yt="yt-dlp --format 'bv*[height<=720][ext=mp4]+ba[ext=m4a]/b[ext=mp4]'"
+alias yta="yt-dlp --extract-audio --audio-format mp3"
 
 #
-# images & video
+# image manipulation
 #
+alias happend="convert +append -gravity center" # horizontal append images
+alias vappend="convert -append -gravity center" # vertical append images
+
 alias exif="exiftool -s -G" # group by raw tag names
-alias stripexif="exiftool -all= -overwrite_original" # strip exif in-place
-
-alias happend="convert +append" # horizontal append images
-alias vappend="convert -append" # vertical append images
-
-alias yt="youtube-dl --format best -o '~/Downloads/_ytdl/%(title)s.%(ext)s'"
-alias ytsub="yt --sub-lang en --write-sub"
-
+alias xexif="exiftool -all= -overwrite_original" # strip exif in-place
 
 # --------------------
 #
@@ -161,66 +209,13 @@ alias ytsub="yt --sub-lang en --write-sub"
 #
 # --------------------
 
-function xc {
-    local XCODE_LOCATION=$1
-    [ -z $XCODE_LOCATION ] && xcode-select -p && return
-    sudo xcode-select -s $XCODE_LOCATION
-}
-
-function aspectratio {
-    desired_ratio=$1
-    input_image=$2
-
-    width=$(identify -format '%w' $input_image)
-    height=$(identify -format '%h' $input_image)
-    ratio=$(echo "scale=2 ; $width / $height" | bc)
-    echo "current size: $width x $height"
-    echo "current aspect ratio: $ratio"
-
-    if (( $(echo "$ratio > $desired_ratio" | bc) )); then
-        # increase height
-        height=$(echo "scale=0; $width / $desired_ratio" | bc)
-    else
-        # increase width
-        width=$(echo "scale=0; $height * $desired_ratio" | bc)
-    fi
-    echo "new size: $width x $height"
-    mogrify -background black -gravity center -extent "${width}x${height}" $input_image
-}
-
-function squarify {
-    aspectratio 1.00 "$1"
-}
-
-function scale_video {
-    local input_video="$1"
-    local desired_height="$2"
-
-    local basename=$(basename -- "$input_video")
-    local filename="${basename%.*}"
-    local extension="${basename##*.}"
-
-    ffmpeg -i "$input_video" -filter:v scale="-1:$desired_height" -c:a copy "${filename}_${desired_height}p.${extension}"
-}
-
-# time format: [-][<HH>:]<MM>:<SS>[.<m>...]
-# HH expresses the number of hours, MM the number of minutes for a maximum of 2 digits and SS the
-# number of seconds for a maximum of 2 digits. The m at the end expresses decimal value for SS.
-function extract_video {
-    local input_video="$1"
-    local time_from="$2"
-    local time_to="$3"
-
-    ffmpeg -ss "$time_from" -to "$time_to" -i "$input_video" -codec copy ffmpeg_extracted.mp4
-}
-
-function lowercase_all_filenames {
+function lowercase_filenames_in_dir() {
     for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "$(echo $f | tr '[:upper:]' '[:lower:]')"; done
 }
 
 # DateTimeOriginal == the time of the shutter actuation
 # CreateDate == the time that the file was written to storage
-function rename_files_using_exif {
+function rename_files_using_exif() {
     FORMAT='media_%Y-%m-%d_%H.%M.%S%%-c.%%le'
 
     # [0] lowercase all filenames & extensions of all supported media types + aae
@@ -242,10 +237,42 @@ function rename_files_using_exif {
 #
 # misc
 #
-function separator_for_dock {
-    defaults write com.apple.dock persistent-apps -array-add '{tile-type="spacer-tile";}'
+
+function dnsflush() {
+    sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+}
+
+function btrestart() {
+    sudo pkill bluetoothd
+}
+
+function dock_clear() {
+    defaults write com.apple.dock persistent-apps -array
     killall Dock
 }
 
-export PATH="$HOME/.dotfiles/bin:$PATH"
-[ -f ~/.aliases.zsh ] && . ~/.aliases.zsh
+function dock_spacer() {
+    defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+    defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+    defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+    killall Dock
+}
+
+#
+# Homebrew
+#
+
+[ -z "$HOMEBREW_PREFIX" ] && export HOMEBREW_PREFIX=$(brew --prefix)
+export HOMEBREW_CASK_OPTS="--appdir=${HOME}/Applications"
+
+#
+# Ruby
+#
+export PATH="${HOMEBREW_PREFIX}/opt/ruby@3/bin:${PATH}"
+
+# extensions
+include "${HOMEBREW_PREFIX}/etc/profile.d/z.sh"
+include "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# source customizations specific to the current host
+include "${HOME}/.local.zsh"

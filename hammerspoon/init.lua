@@ -4,8 +4,7 @@
 
 local hyper = {'⌃', '⌥', '⌘'}
 hs.hotkey.bind(hyper, 'R', hs.reload)
--- hs.hotkey.bind(hyper, 'H', hs.toggleConsole)
--- hs.hotkey.bind(hyper, '.', hs.hints.windowHints)
+hs.hotkey.bind(hyper, 'H', hs.toggleConsole)
 
 --
 -- Keybindings
@@ -30,8 +29,6 @@ end
 
 hs.hotkey.bind({'⌘', '⇧'}, item.key, appActivation)
 end)
-
-hs.loadSpoon('SpoonInstall')
 
 --
 -- Caffeine
@@ -63,26 +60,6 @@ if caffeine then
   caffeine:setClickCallback(toggleCaffeine)
   updateCaffeineDisplay(hs.caffeinate.get('displayIdle'))
 end
-
---
--- Translation with DeepL
---
-spoon.SpoonInstall:andUse('DeepLTranslate', {
-  hotkeys = {
-    translate = { {'⌥', '⌘'}, 't' },
-  }
-})
-
---
--- Window management
---
-
-local wm = require('window-management')
-
-hs.hotkey.bind({'⌥', '⌘'}, 'c', function() wm.windowCenter() end)
-hs.hotkey.bind({'⌥', '⌘'}, 'x', function() wm.windowMaximize(0) end)
-hs.hotkey.bind({'⌥', '⌘'}, 'e', function() wm.moveWindowToPosition(wm.screenPositions.left) end)
-hs.hotkey.bind({'⌥', '⌘'}, 'r', function() wm.moveWindowToPosition(wm.screenPositions.right) end)
 
 --
 -- Misc

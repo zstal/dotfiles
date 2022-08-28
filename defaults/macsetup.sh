@@ -6,18 +6,15 @@ set -x
 # Based on https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 #
 
-# Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
-osascript -e 'tell application "System Preferences" to quit'
+# - - - - - - - - - -
 
-# Disable transparency in the menu bar and elsewhere on Yosemite
-defaults write com.apple.universalaccess reduceTransparency -bool true
+# Close any open System Preferences panes, to prevent overriding settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
 
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
-# Always show scrollbars
-# Possible values: `WhenScrolling`, `Automatic` and `Always`
+# Always show scrollbars | values: `WhenScrolling`, `Automatic` and `Always`
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 # Expand save panel by default
@@ -31,30 +28,19 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Disable the “Are you sure you want to open this application?” dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
-
 # Disable Resume system-wide
 defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 
-# Disable automatic capitalization as it’s annoying when typing code
+# Disable annoying typing helpers
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
-
-# Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-
-# Disable automatic period substitution as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
-
-# Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
-# Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-###############################################################################
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-###############################################################################
+#
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input
+#
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -63,9 +49,6 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Disable "natural scrolling"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-
-# Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
@@ -84,29 +67,27 @@ defaults write NSGlobalDomain KeyRepeat -int 1 # GUI minimum is 2 (30 ms)
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
 defaults write NSGlobalDomain AppleLanguages -array "en"
-defaults write NSGlobalDomain AppleLocale -string "en_CA@currency=HUF"
+defaults write NSGlobalDomain AppleLocale -string "en_US@currency=HUF"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
-###############################################################################
+#
 # Screen                                                                      #
-###############################################################################
+#
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Screenshot save location
-defaults write com.apple.screencapture location -string "${HOME}/Pictures/screenshots"
-
-# Disable shadow in screenshots
+# Screenshot save location & no-shadow
+defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
 defaults write com.apple.screencapture disable-shadow -bool true
 
-###############################################################################
-# Finder                                                                      #
-###############################################################################
+#
+# Finder
+#
 
-# Finder: disable window animations and Get Info animations
+# Disable Finder window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Set the default location for new Finder windows
@@ -121,19 +102,13 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
-# Finder: show all filename extensions
+# Finder: show all filename extensions & disable change warnings
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-# Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-# Finder: show status bar
+# Finder: show status bar, path bar & full POSIX path in title
 defaults write com.apple.finder ShowStatusBar -bool true
-
-# Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
-
-# Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # Keep folders on top when sorting by name
@@ -166,46 +141,39 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist
 
-# Use list view in all Finder windows by default
-# Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
+# Use list view in all Finder windows by default | other view modes: `icnv`, `clmv`, `glyv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-# Disable the warning before emptying the Trash
+# Disable the warning before emptying the Trash & auto-empty after 30 days
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-# Empty trash after 30 days
 defaults write com.apple.finder FXRemoveOldTrashItems -bool true
 
-# Expand the following File Info panes:
-# “General”, “Open with”, and “Sharing & Permissions”
+# Expand the following File Info panes: “General”, “Open with”, and “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
     General -bool true \
     OpenWith -bool true \
     Privileges -bool true
 
-###############################################################################
-# Dock, Dashboard, and hot corners                                            #
-###############################################################################
+#
+# Dock, Dashboard, and hot corners
+#
 
-# Wipe all (default) app icons from the Dock
-# This is only really useful when setting up a new Mac, or if you don’t use
-# the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array
+# Wipe all (default) app icons from the Dock (useful when setting up a new Mac)
+# defaults write com.apple.dock persistent-apps -array
 
 # Add a spacer to the left side of the Dock (where the applications are)
-#defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-#defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-#defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+# defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+# defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+# defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
 # Add a spacer to the right side of the Dock (where the Trash is)
-#defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
+# defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "scale"
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
-
 
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
@@ -225,52 +193,56 @@ defaults write com.apple.dock show-recents -bool false
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
 defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
 
-###############################################################################
-# Safari & WebKit                                                             #
-###############################################################################
+#
+# Safari & WebKit
+#
 
 # Privacy: don’t send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 
-###############################################################################
-# Terminal & iTerm 2                                                          #
-###############################################################################
+#
+# Terminal
+#
 
-# Enable Secure Keyboard Entry in Terminal.app
-# See: https://security.stackexchange.com/a/47786/8918
+# Enable Secure Keyboard Entry in Terminal.app https://security.stackexchange.com/a/47786/8918
 defaults write com.apple.terminal SecureKeyboardEntry -bool true
 
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+#
+# iTerm2
+#
 
-###############################################################################
-# Time Machine                                                                #
-###############################################################################
+# Specify the preferences directory & load the prefs from there
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+#
+# Time Machine
+#
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-###############################################################################
+#
 # Photos                                                                      #
-###############################################################################
+#
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-###############################################################################
-# Transmission.app                                                            #
-###############################################################################
+#
+# Transmission
+#
 
-# Hide the donate message
+# Hide the donate message & the legal disclaimer
 defaults write org.m0k.transmission WarningDonate -bool false
-# Hide the legal disclaimer
 defaults write org.m0k.transmission WarningLegal -bool false
 
-# IP block list.
-# Source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
+# IP block list | source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
 defaults write org.m0k.transmission BlocklistNew -bool true
 defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+
+# - - - - - - - - - -
 
 echo "✅ Done. Note that some of these changes require a logout/restart to take effect."

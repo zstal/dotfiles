@@ -1,10 +1,13 @@
 - shell:
   - [git submodule update --init --recursive, 'Updating submodules...']
+  - [touch ~/.hushlogin]
 
 - create:
     ~/.config/:
       mode: 0700
     ~/.ssh/:
+      mode: 0700
+    ~/.ssh/keys:
       mode: 0700
 
 - defaults:
@@ -19,14 +22,24 @@
       recursive: true
 
 - link:
+    ~/.ssh/config:
+      path: ssh/config
     ~/.gitconfig:
       path: git/gitconfig
     ~/.hammerspoon:
       path: hammerspoon/
+    ~/Library/Application Support/Sublime Text/Packages/User/Default (OSX).sublime-keymap:
+      path: sublime-text/Default (OSX).sublime-keymap
+    ~/Library/Application Support/Sublime Text/Packages/User/Package Control.sublime-settings:
+      path: sublime-text/Package Control.sublime-settings
     ~/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings:
       path: sublime-text/Preferences.sublime-settings
     ~/Library/Application Support/Sublime Text/Packages/User/Snippets:
       path: sublime-text/Snippets/
+    ~/Library/Developer/Xcode/UserData/CodeSnippets:
+      path: xcode/CodeSnippets/
+    ~/Library/Developer/Xcode/UserData/KeyBindings:
+      path: xcode/KeyBindings/
     ~/Library/Developer/Xcode/UserData/IDETemplateMacros.plist:
       path: xcode/IDETemplateMacros.plist
     ~/.zshrc:

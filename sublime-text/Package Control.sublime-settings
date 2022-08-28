@@ -1,0 +1,18 @@
+{
+	"bootstrapped": true,
+	"installed_packages":
+	[
+		"Case Conversion",
+		"Decent Swift Syntax",
+		"DiffTabs",
+		"Git blame",
+		"GitGutter",
+		"GitHubinator",
+		"MarkdownLivePreview",
+		"Package Control",
+		"Pretty JSON",
+	],
+	"in_process_packages":
+	[
+	],
+}

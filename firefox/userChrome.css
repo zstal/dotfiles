@@ -1,7 +1,6 @@
-/* hides the native tabs but leaves window buttons */
-#tabbrowser-tabs {
-  visibility: collapse;
-}
+/*
+ * ALL WINDOWS
+*/
 
 /* remove Tree Style Tabs header */
 #sidebar-header {
@@ -9,22 +8,11 @@
 }
 
 /*
- * PRIVATE BROWSING
+ * REGULAR WINDOWS
 */
 
-#main-window[privatebrowsingmode="temporary"]
-#tabbrowser-tabs {
-  visibility: visible;
-}
-
-/* make the navbar purple like the incognito icon */
-#main-window[privatebrowsingmode="temporary"]
-#nav-bar {
-	  background-color: #8000D7 !important;
-}
-
-/* make toolbar buttons white in light & dark mode */
-#main-window[privatebrowsingmode="temporary"]
-.toolbarbutton-1 {
-    fill: #FBFBFE !important;
+/* hides the native tabs - turn on "Title Bar" in "Customize Toolbar" */
+#main-window:not([privatebrowsingmode])
+#TabsToolbar {
+  visibility: collapse;
 }
