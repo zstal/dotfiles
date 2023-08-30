@@ -170,15 +170,11 @@ function git-default-branch() {
     basename $(git symbolic-ref --short refs/remotes/origin/HEAD)
 }
 
-function git-reset-to() {
+function grt() {
     local ROOT_COMMIT="$1"
-    [ -z "$ROOT_COMMIT" ] && echo "Missing root branch parameter!" && return -1
+    [ -z "$ROOT_COMMIT" ] && echo "Missing root commit parameter!" && return -1
     local CURRENT_BRANCH=$(git branch --show-current)
     git reset $(git merge-base "$ROOT_COMMIT" "$CURRENT_BRANCH")
-}
-
-function grt() {
-    git-reset-to $(git-default-branch)
 }
 
 function git-stale-branches () {
@@ -191,8 +187,8 @@ function git-stale-branches () {
 alias dg="dig +short"
 alias myip='echo $(curl --silent https://ifconfig.me)'
 alias pyserver="python3 -m http.server"
-alias yt="yt-dlp --format 'bv*[height<=720][ext=mp4]+ba[ext=m4a]/b[ext=mp4]'"
-alias yta="yt-dlp --extract-audio --audio-format mp3"
+alias ytv="yt-dlp --format 'best[height<=720][ext=mp4]'"
+alias yta="yt-dlp --extract-audio --audio-format opus"
 
 #
 # image manipulation
