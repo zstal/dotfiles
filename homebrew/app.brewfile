@@ -1,7 +1,7 @@
 tap 'homebrew/cask'
 
 # install apps for the current user only
-cask_args appdir: '~/Applications'
+# cask_args appdir: '~/Applications'
 
 cask 'alfred'
 cask 'appcleaner'
@@ -19,4 +19,11 @@ cask 'transmission'
 cask 'visual-studio-code'
 cask 'xcodes'
 
-# MAS: Hyperduck, PDFCombo, WireGuard, Xnip
+# install MAS apps
+# 1358823008  # Flighty
+# 6444667067  # Hyperduck
+# 462058435   # Microsoft Excel
+# 462054704   # Microsoft Word
+# 1030461463  # PDFCombo
+# 1451685025  # WireGuard
+# 1221250572  # Xnip
