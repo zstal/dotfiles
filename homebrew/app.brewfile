@@ -21,10 +21,13 @@ cask 'visual-studio-code'
 cask 'xcodes'
 
 # install MAS apps
-# 1358823008  # Flighty
-# 6444667067  # Hyperduck
-# 462058435   # Microsoft Excel
-# 462054704   # Microsoft Word
-# 1030461463  # PDFCombo
-# 1451685025  # WireGuard
-# 1221250572  # Xnip
+# 1019371109  Balance Lock
+# 1358823008  Flighty
+# 6444667067  Hyperduck
+# 1464122853  NextDNS
+# 462058435   Microsoft Excel
+# 462054704   Microsoft Word
+# 1030461463  PDFCombo
+# 1611378436  Pure Paste
+# 1451685025  WireGuard
+# 1221250572  Xnip
