@@ -199,7 +199,7 @@ alias happend="convert +append -gravity center" # horizontal append images
 alias vappend="convert -append -gravity center" # vertical append images
 
 alias exif="exiftool -s -G" # group by raw tag names
-alias xexif="exiftool -all= -overwrite_original" # strip exif in-place
+alias stripexif="exiftool -all= -overwrite_original" # strip exif in-place
 
 # --------------------
 #
