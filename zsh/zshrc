@@ -133,6 +133,7 @@ alias grv="git remote --verbose"
 alias gss="git status --short"
 alias gst="git status"
 alias gwip="git add -A && git commit -m 'Work In Progress'"
+alias gwipp="gwip && gp"
 
 # switch to a local branch
 function gsw() {
