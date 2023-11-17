@@ -132,8 +132,8 @@ alias gpf="git push --force-with-lease"
 alias grv="git remote --verbose"
 alias gss="git status --short"
 alias gst="git status"
-alias gwip="git add -A && git commit -m 'Work In Progress'"
-alias gwipp="gwip && gp"
+alias gw="git add -A && git commit -m 'Work In Progress'"
+alias gwp="gw && gp"
 
 # switch to a local branch
 function gsw() {
