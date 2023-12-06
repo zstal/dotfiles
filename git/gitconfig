@@ -4,13 +4,6 @@
 [log]
 	date = iso
 
-[alias]
-	br = branch
-	ci = commit
-	co = checkout
-	lg = log --oneline --graph
-	st = status
-
 [core]
 	excludesfile = ~/.gitignore_global
 
