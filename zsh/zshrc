@@ -131,8 +131,14 @@ alias gpf="git push --force-with-lease"
 alias grv="git remote --verbose"
 alias gss="git status --short"
 alias gst="git status"
-alias gw="git add --all && git commit -m 'Work In Progress'"
 alias gwp="gw && gp"
+
+# gw == git work-in-progress
+function gw() {
+    # set a default WIP commit msg if none available
+    [ -z "$GIT_WIP_MSG" ] && export GIT_WIP_MSG="work in progress"
+    git add --all && git commit -m "$GIT_WIP_MSG"
+}
 
 # switch to a local branch
 function gsw() {
