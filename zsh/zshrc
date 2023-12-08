@@ -289,7 +289,9 @@ function fcd() {
 }
 
 function fs() {
-    subl $(fd --type f | fzf --multi)
+    local files_to_open=$(fd --type f | fzf --multi)
+    [ -z "$files_to_open" ] && echo > /dev/stderr "ERROR: no files to open" && return 1
+    subl "$files_to_open"
 }
 
 # extensions
