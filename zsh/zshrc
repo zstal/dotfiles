@@ -280,6 +280,18 @@ export HOMEBREW_CASK_OPTS="--appdir=${HOME}/Applications"
 #
 export PATH="${HOMEBREW_PREFIX}/opt/ruby@3/bin:${PATH}"
 
+#
+# fzf
+#
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+function fcd() {
+    cd $(fd --type d | fzf)
+}
+
+function fs() {
+    subl $(fd --type f | fzf --multi)
+}
+
 # extensions
 include "${HOMEBREW_PREFIX}/etc/profile.d/z.sh"
 include "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
