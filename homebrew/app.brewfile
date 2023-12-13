@@ -18,7 +18,6 @@ cask 'rectangle'
 cask 'sublime-text'
 cask 'transmission'
 cask 'visual-studio-code'
-cask 'xcodes'
 
 # install MAS apps
 # 1019371109  Balance Lock
