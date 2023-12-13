@@ -101,11 +101,13 @@ alias rgg="rg --hidden"
 alias s="subl"
 alias trim-trailing-ws-recursively="perl -pi -e 's/ +$//'"
 alias x="xed ."
-alias xc="xcode-select -p"
 
-function ff() {
-    local OUT=$(fd --hidden | fzf)
-    subl "$OUT"
+function xcp() {
+    xcode-select --print-path
+}
+
+function xcs() {
+    sudo xcode-select --switch $(find /Applications -maxdepth 1 -iname 'xcode*.app' | fzf)
 }
 
 #
