@@ -16,7 +16,6 @@ cask 'monitorcontrol'
 cask 'netnewswire'
 cask 'rectangle'
 cask 'sublime-text'
-cask 'transmission'
 cask 'visual-studio-code'
 
 # install MAS apps
