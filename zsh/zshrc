@@ -93,6 +93,7 @@ function take() {
 # code tools
 #
 alias be="bundle exec"
+alias c="code"
 alias f="fork"
 alias fdd="fd --hidden"
 alias p="bundle exec pod install"
