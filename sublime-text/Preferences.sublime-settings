@@ -2,12 +2,13 @@
 // and are overridden in turn by syntax-specific settings.
 {
 	"always_show_minimap_viewport": true,
-	"color_scheme": "Mariana.sublime-color-scheme",
+	"color_scheme": "Packages/Monokai++/themes/Monokai++.tmTheme",
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Inconsolata",
 	"font_size": 18,
-	"ignored_packages":["Vintage"],
+	"ignored_packages":["Vintage",],
+	"index_files": true,
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
 	"open_files_in_new_window": "never",
