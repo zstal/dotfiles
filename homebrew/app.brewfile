@@ -15,6 +15,7 @@ cask 'maestral'
 cask 'monitorcontrol'
 cask 'netnewswire'
 cask 'rectangle'
+cask 'sanesidebuttons'
 cask 'sublime-text'
 cask 'visual-studio-code'
 
