@@ -133,6 +133,8 @@ alias gss="git status --short"
 alias gst="git status"
 alias gwp="gw && gp"
 
+export GIT_WIP_MSG="work in progress"
+
 #
 # github
 #
@@ -141,8 +143,6 @@ alias ,,="gh copilot explain"
 
 # gw == git work-in-progress
 function gw() {
-    # set a default WIP commit msg if none available
-    [ -z "$GIT_WIP_MSG" ] && export GIT_WIP_MSG="work in progress"
     git add --all && git commit -m "$GIT_WIP_MSG"
 }
 
