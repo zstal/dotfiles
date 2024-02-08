@@ -5,6 +5,7 @@ tap 'homebrew/cask'
 
 cask 'alfred'
 cask 'appcleaner'
+cask 'devtoys'
 cask 'firefox'
 cask 'fork'
 cask 'hammerspoon'
