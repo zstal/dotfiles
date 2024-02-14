@@ -261,12 +261,12 @@ function btrestart() {
     sudo pkill bluetoothd
 }
 
-function dock_clear() {
+function dock_clear_all() {
     defaults write com.apple.dock persistent-apps -array
     killall Dock
 }
 
-function dock_spacer() {
+function dock_spacer_add3() {
     defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
     defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
     defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
