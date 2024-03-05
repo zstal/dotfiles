@@ -80,10 +80,11 @@ alias ls="ls --color=auto"
 alias mv="mv -i"
 alias o="open ."
 alias path="echo $PATH"
+alias rmrf="rm -rf"
 alias rr="[ -f ~/.zshrc ] && . ~/.zshrc && echo '✅ Successfully reloaded .zshrc'"
 alias tt="tree -L 2"
 alias ttt="tree -L 3"
-alias xx='chmod u+x'
+alias xx="chmod u+x"
 
 function take() {
     mkdir -p $@ && cd ${@:$#}
