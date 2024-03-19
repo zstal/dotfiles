@@ -138,6 +138,7 @@ alias gw="git add --all && git commit -m 'work in progress'"
 # github
 #
 alias ghprc="gh pr create --web"
+alias ghprv="gh pr view --web"
 alias ,,="gh copilot explain"
 
 # gw == git work-in-progress
