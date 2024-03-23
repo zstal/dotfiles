@@ -1,5 +1,4 @@
 - shell:
-  - [git submodule update --init --recursive, 'Updating submodules...']
   - [touch ~/.hushlogin]
 
 - create:
@@ -22,15 +21,6 @@
       recursive: true
 
 - link:
-    # TODO: figure out how to do workflows w/ globbing
-    ~/Library/Services/Copy GitHub link to clipboard.workflow:
-      path: services/Copy GitHub link to clipboard.workflow
-    ~/Library/Services/Open on GitHub.workflow:
-      path: services/Open on GitHub.workflow
-    ~/Library/Services/sort + uniq.workflow:
-      path: services/sort + uniq.workflow
-    ~/Library/Services/Strip EXIF.workflow:
-      path: services/Strip EXIF.workflow
     ~/.ssh/config:
       path: ssh/config
     ~/.gitconfig:
