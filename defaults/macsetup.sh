@@ -172,6 +172,9 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "scale"
 
+# Turn off animation when double clicking a window titlebar
+defaults write -g NSWindowResizeTime -float 0.001
+
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
 
