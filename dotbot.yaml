@@ -31,8 +31,6 @@
       path: vscode/keybindings.json
     ~/Library/Application Support/Sublime Text/Packages/User/Default (OSX).sublime-keymap:
       path: sublime-text/Default (OSX).sublime-keymap
-    ~/Library/Application Support/Sublime Text/Packages/User/Package Control.sublime-settings:
-      path: sublime-text/Package Control.sublime-settings
     ~/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings:
       path: sublime-text/Preferences.sublime-settings
     ~/Library/Application Support/Sublime Text/Packages/User/Snippets:
