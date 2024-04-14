@@ -2,7 +2,7 @@
 // and are overridden in turn by syntax-specific settings.
 {
 	"always_show_minimap_viewport": true,
-	"color_scheme": "Packages/Monokai++/themes/Monokai++.tmTheme",
+	"color_scheme": "Mariana.sublime-color-scheme",
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Inconsolata",
