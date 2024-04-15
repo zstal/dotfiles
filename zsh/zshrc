@@ -254,6 +254,10 @@ function rename_files_using_exif() {
 # misc
 #
 
+function openports() {
+    lsof -PiTCP -sTCP:LISTEN
+}
+
 function dnsflush() {
     sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 }
