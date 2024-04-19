@@ -283,7 +283,6 @@ function dock_spacer_add3() {
 #
 
 [ -z "$HOMEBREW_PREFIX" ] && export HOMEBREW_PREFIX=$(brew --prefix)
-export HOMEBREW_CASK_OPTS="--appdir=${HOME}/Applications"
 
 #
 # Ruby
