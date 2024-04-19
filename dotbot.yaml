@@ -8,6 +8,8 @@
       mode: 0700
     ~/.ssh/keys:
       mode: 0700
+    ~/Screenshots/:
+      mode: 0700
 
 - defaults:
     link:
