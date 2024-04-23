@@ -141,11 +141,6 @@ alias gw="git add --all && git commit -m 'work in progress'"
 alias ghprc="gh pr create --web"
 alias ghprv="gh pr view --web"
 
-# gw == git work-in-progress
-function gw() {
-    git add --all && git commit -m "$GIT_WIP_MSG"
-}
-
 # switch to a local branch
 function gsw() {
     command git rev-parse --git-dir &> /dev/null || return
