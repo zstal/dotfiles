@@ -1,9 +1,7 @@
 # Sets up default app associations using duti
 # format: [bundleID] [UTI] [role]
 
-#
 # Media Player
-#
 com.colliderli.iina .avi all
 com.colliderli.iina .flac all
 com.colliderli.iina .flv all
@@ -20,9 +18,7 @@ com.colliderli.iina .wav all
 com.colliderli.iina .webm all
 com.colliderli.iina .wmv all
 
-#
 # Text Editor
-#
 com.sublimetext.4 .dat all
 com.sublimetext.4 .json all
 com.sublimetext.4 .lua all
@@ -31,8 +27,12 @@ com.sublimetext.4 .php all
 com.sublimetext.4 .py all
 com.sublimetext.4 .rb all
 com.sublimetext.4 .sh all
+com.sublimetext.4 .swift all
 com.sublimetext.4 .tex all
 com.sublimetext.4 .toml all
 com.sublimetext.4 .txt all
 com.sublimetext.4 .yml all
 com.sublimetext.4 public.plain-text all
+
+# PDF editor
+org.mozilla.firefox .pdf all
