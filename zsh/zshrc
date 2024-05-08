@@ -24,11 +24,11 @@ zstyle ':vcs_info:*' stagedstr ' +'
 # Set the format of the Git information for vcs_info
 zstyle ':vcs_info:git:*' formats       '(%b%u%c) '
 zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c) '
-precmd() { vcs_info }
 
 #
 # prompt
 #
+precmd() { print ""; vcs_info }
 setopt PROMPT_SUBST
 PROMPT='%F{cyan}%~%f %F{yellow}${vcs_info_msg_0_}%f%F{red}%(?..[%?] )%f%# '
 
