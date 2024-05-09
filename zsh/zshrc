@@ -133,7 +133,7 @@ alias grhh="git reset --hard HEAD"
 alias grv="git remote --verbose"
 alias gss="git status --short"
 alias gst="git status"
-alias gw="git add --all && git commit -m 'work in progress'"
+alias gw="git add --all && git status --short && git commit -m 'work in progress'"
 
 #
 # github
