@@ -35,4 +35,4 @@ com.sublimetext.4 .yml all
 com.sublimetext.4 public.plain-text all
 
 # PDF editor
-org.mozilla.firefox .pdf all
+com.apple.Preview .pdf all
