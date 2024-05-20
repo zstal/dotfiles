@@ -91,13 +91,14 @@ function take() {
     mkdir -p $@ && cd ${@:$#}
 }
 
-# code editors
+# code & diff
 alias c="code"
+alias f="fork"
 alias s="subl"
 alias x="xed ."
+
 # misc command line
 alias be="bundle exec"
-alias f="fzf --preview 'bat --color=always {}'"
 alias p="bundle exec pod install"
 alias rg="rg --smart-case"
 alias trim-trailing-ws-recursively="perl -pi -e 's/ +$//'"
