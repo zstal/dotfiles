@@ -90,19 +90,16 @@ function take() {
     mkdir -p $@ && cd ${@:$#}
 }
 
-#
-# code tools
-#
-alias be="bundle exec"
+# code editors
 alias c="code"
-alias f="fork"
-alias fdd="fd --hidden"
+alias s="subl"
+alias x="xed ."
+# misc command line
+alias be="bundle exec"
+alias f="fzf --preview 'bat --color=always {}'"
 alias p="bundle exec pod install"
 alias rg="rg --smart-case"
-alias rgg="rg --hidden"
-alias s="subl"
 alias trim-trailing-ws-recursively="perl -pi -e 's/ +$//'"
-alias x="xed ."
 
 function xcp() {
     xcode-select --print-path
