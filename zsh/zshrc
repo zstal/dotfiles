@@ -69,7 +69,7 @@ alias hp="history -p && echo '✅ history cleared'"
 #
 alias dev="cd ~/Developer"
 alias dl="cd ~/Downloads"
-alias dot="cd ~/.dotfiles"
+alias dotf="cd ~/.dotfiles"
 alias dt="cd ~/Desktop"
 
 alias ....="cd ../../.."
