@@ -1,6 +1,3 @@
-- shell:
-  - [touch ~/.hushlogin]
-
 - create:
     ~/.config/:
       mode: 0700
@@ -8,23 +5,17 @@
       mode: 0700
     ~/.ssh/keys:
       mode: 0700
-    ~/Screenshots/:
-      mode: 0700
+
+- shell:
+  - [touch ~/.hushlogin]
+  - [echo 'IdentityFile ~/.ssh/keys/%h' > ~/.ssh/config]
 
 - defaults:
     link:
       create: true # create parent directories to the link as needed
       relink: true # removes the old target if it's a symlink
 
-- clean:
-    ~/:
-      force: true # remove ALL dead symlinks (even if pointing outside .dotfiles)
-    ~/.config/:
-      recursive: true
-
 - link:
-    ~/.ssh/config:
-      path: ssh/config
     ~/.gitconfig:
       path: git/gitconfig
     ~/.hammerspoon:
