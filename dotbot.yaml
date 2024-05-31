@@ -8,7 +8,6 @@
 
 - shell:
   - [touch ~/.hushlogin]
-  - [echo 'IdentityFile ~/.ssh/keys/%h' > ~/.ssh/config]
 
 - defaults:
     link:
