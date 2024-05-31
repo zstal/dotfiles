@@ -31,8 +31,8 @@
       path: hammerspoon/
     ~/Library/Application Support/Code/User/keybindings.json:
       path: vscode/keybindings.json
-    ~/Library/Application Support/Sublime Text/Packages/User/Default (OSX).sublime-keymap:
-      path: sublime-text/Default (OSX).sublime-keymap
+    ~/Library/Application Support/Sublime Text/Packages/User/Default.sublime-keymap:
+      path: sublime-text/Default.sublime-keymap
     ~/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings:
       path: sublime-text/Preferences.sublime-settings
     ~/Library/Application Support/Sublime Text/Packages/User/Snippets:
