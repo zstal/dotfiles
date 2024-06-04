@@ -136,8 +136,8 @@ alias gw="git status --short && git commit -m 'work in progress'"
 #
 # github
 #
-alias prc="gh pr create --web"
-alias prv="gh pr view --web"
+alias ghprc="gh pr create --web"
+alias ghprv="gh pr view --web"
 
 # switch to a local branch
 function gsw() {
