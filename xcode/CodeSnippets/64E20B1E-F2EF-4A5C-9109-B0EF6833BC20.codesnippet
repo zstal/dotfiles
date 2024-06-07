@@ -9,11 +9,14 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// Arrange
-
-// Act
-
-// Assert</string>
+	<string>func test_() {
+    // Arrange
+    &lt;#code...#&gt;
+    
+    // Act
+    
+    // Assert
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>64E20B1E-F2EF-4A5C-9109-B0EF6833BC20</string>
 	<key>IDECodeSnippetLanguage</key>

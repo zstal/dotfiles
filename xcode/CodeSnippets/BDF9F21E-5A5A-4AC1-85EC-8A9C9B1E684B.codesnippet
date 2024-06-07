@@ -9,32 +9,18 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>import Foundation
-
-protocol &lt;#SomeService#&gt; {
-
-}
-
-final class &lt;#SomeService#&gt;Impl {
-
-}
-
-//
-// MARK: - [Pr] &lt;#SomeService#&gt;
-//
-
-extension &lt;#SomeService#&gt;Impl: &lt;#SomeService#&gt; {
-
-}
-</string>
+	<string>{ [weak self] in
+    guard let self else { return }
+    &lt;#code...#&gt;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>BC8F4222-10AC-4240-A7BB-4BF1CFA4D539</string>
+	<string>BDF9F21E-5A5A-4AC1-85EC-8A9C9B1E684B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>new class template</string>
+	<string>weak self closure</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
