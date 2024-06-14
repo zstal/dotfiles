@@ -17,6 +17,7 @@ cask 'monitorcontrol'
 cask 'netnewswire'
 cask 'rectangle'
 cask 'sanesidebuttons'
+cask 'selfcontrol'
 cask 'sublime-text'
 cask 'visual-studio-code'
 
