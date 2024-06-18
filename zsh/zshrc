@@ -101,6 +101,7 @@ alias x="xed ."
 alias be="bundle exec"
 alias p="bundle exec pod install"
 alias rg="rg --smart-case"
+alias rgg="rg --hidden --no-ignore"
 alias trim-trailing-ws-recursively="perl -pi -e 's/ +$//'"
 
 function xcp() {
