@@ -3,20 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string></string>
+	<string>aaa</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>func test_() {
-    // Arrange
-    &lt;#code...#&gt;
-    
-    // Act
-    
-    // Assert
-}</string>
+	<string>// Arrange
+&lt;#code...#&gt;
+
+// Act
+
+// Assert
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>64E20B1E-F2EF-4A5C-9109-B0EF6833BC20</string>
 	<key>IDECodeSnippetLanguage</key>
