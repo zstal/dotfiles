@@ -5,7 +5,6 @@ tap 'homebrew/cask'
 
 cask 'alfred'
 cask 'appcleaner'
-cask 'devtoys'
 cask 'firefox'
 cask 'fork'
 cask 'hammerspoon'
@@ -29,6 +28,5 @@ cask 'visual-studio-code'
 # 462058435   Microsoft Excel
 # 462054704   Microsoft Word
 # 1030461463  PDFCombo
-# 1611378436  Pure Paste
 # 1451685025  WireGuard
 # 1221250572  Xnip
