@@ -1,8 +1,3 @@
-tap 'homebrew/cask'
-
-# install apps for the current user only
-# cask_args appdir: '~/Applications'
-
 cask 'alfred'
 cask 'appcleaner'
 cask 'firefox'
