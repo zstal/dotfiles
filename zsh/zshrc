@@ -54,6 +54,7 @@ function include() {
 #
 # config files
 #
+alias ,hosts="subl /etc/hosts"
 alias ,hs="subl ~/.hammerspoon/init.lua"
 alias ,loc="subl ~/.local.zsh"
 alias ,rc="subl ~/.zshrc"
