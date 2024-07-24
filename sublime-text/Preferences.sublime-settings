@@ -3,7 +3,10 @@
 {
 	"ensure_newline_at_eof_on_save": true,
 	"font_size": 18,
-	"ignored_packages":["Vintage"],
+	"ignored_packages":[
+		"Vintage",
+	],
+	"index_files": true,
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
 	"open_tabs_after_current": false,
