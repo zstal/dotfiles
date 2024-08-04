@@ -134,7 +134,7 @@ alias gpf="git push --force-with-lease"
 alias grv="git remote --verbose"
 alias gss="git status --short"
 alias gst="git status"
-alias gw="git status --short && git commit -m 'work in progress'"
+alias gw="git status --short && git commit -m WIP"
 
 #
 # github
