@@ -10,7 +10,7 @@ set -euo pipefail
 defaults write com.apple.dock persistent-apps -array && killall Dock
 
 echo '🔄 Configuring macOS settings...'
-./defaults/macsetup.sh
+./macos/macsetup.sh
 
 echo '🔄 Installing dotfiles...'
 ./install-dotfiles
@@ -25,4 +25,4 @@ echo '🔄 Installing GUI apps via homebrew...'
 /opt/homebrew/bin/brew bundle install --file homebrew/apps.brewfile --verbose
 
 echo '🔄 Associating extensions with apps...'
-/opt/homebrew/bin/duti -v defaults/Dutifile
+/opt/homebrew/bin/duti -v macos/Dutifile
