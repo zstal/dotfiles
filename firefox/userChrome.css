@@ -16,3 +16,7 @@
 #TabsToolbar {
   visibility: collapse;
 }
+
+#sidebar-box, #sidebar-box #sidebar {
+    min-width: 50px !important;
+}
