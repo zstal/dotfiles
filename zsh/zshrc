@@ -166,7 +166,7 @@ function gswa() {
     if [ $# -eq 0 ];
     then
         local selected_branch=$(git for-each-ref --format='%(refname:short)' refs/{heads,remotes} | sed 's/origin\///' | sort | uniq | fzf)
-        [ ! -z "$selected_branch" ] && git switch "$selected_branch"
+        [ ! -z "$selected_branch" ] && git switch --detach "$selected_branch"
     fi
 }
 
