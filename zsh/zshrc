@@ -103,7 +103,13 @@ alias be="bundle exec"
 alias p="bundle exec pod install"
 alias rg="rg --smart-case"
 alias rgg="rg --hidden --no-ignore"
-alias trim-trailing-ws-recursively="perl -pi -e 's/ +$//'"
+
+function trim-trailing-ws-for-ext {
+    local EXT="$1"
+    [ -z "$EXT" ] && echo "Extension not found" && exit 1
+    echo "Trimming trailing whitespace for all files with extension: $EXT"
+    find . -type f -name "*.$EXT" -print0 | xargs -0 sed -i '' -E 's/[[:space:]]*$//'
+}
 
 function xcp() {
     xcode-select --print-path
