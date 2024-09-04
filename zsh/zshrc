@@ -285,6 +285,7 @@ function dock_spacer_add3() {
 # Homebrew
 #
 
+export HOMEBREW_NO_ANALYTICS=1
 [ -z "$HOMEBREW_PREFIX" ] && export HOMEBREW_PREFIX=$(brew --prefix)
 
 #
