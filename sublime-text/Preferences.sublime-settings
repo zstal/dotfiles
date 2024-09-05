@@ -9,6 +9,7 @@
 	"index_files": true,
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
+	"open_files_in_new_window": "never",
 	"open_tabs_after_current": false,
 	"rulers": [120],
 	"scroll_past_end": 0.5,
