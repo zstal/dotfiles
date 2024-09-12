@@ -1,4 +1,5 @@
 cask 'alfred'
+cask 'devtoys'
 cask 'firefox'
 cask 'fork'
 cask 'hammerspoon'
