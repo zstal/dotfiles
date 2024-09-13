@@ -9,7 +9,8 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let _ = Self._printChanges()</string>
+	<string>// swiftlint:disable:next redundant_discardable_let
+let _ = Self._printChanges()</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>BED543CA-9AB3-485C-B0DA-94A8CDBA37B5</string>
 	<key>IDECodeSnippetLanguage</key>
