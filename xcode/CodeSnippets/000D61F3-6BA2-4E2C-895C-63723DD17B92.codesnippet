@@ -9,7 +9,12 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let string = String(decoding: data, as: UTF8.self)</string>
+	<string>// if the Data instance can’t be converted to a UTF-8 string this might send back an empty string
+let string = String(decoding: data, as: UTF8.self)
+// if unsure whether the string can safely be converted use the failable initializer to detect errors
+if let unwrappedString = String(data: data, encoding: .utf8) {
+    print("Successfully decoded: \(unwrappedString)")
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>000D61F3-6BA2-4E2C-895C-63723DD17B92</string>
 	<key>IDECodeSnippetLanguage</key>
