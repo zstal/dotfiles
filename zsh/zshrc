@@ -102,7 +102,6 @@ alias x="xed ."
 alias be="bundle exec"
 alias p="bundle exec pod install"
 alias rg="rg --smart-case"
-alias rgg="rg --hidden --no-ignore"
 
 function trim-trailing-ws-for-ext {
     local EXT="$1"
