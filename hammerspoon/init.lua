@@ -13,8 +13,12 @@ hs.hotkey.bind(hyper, 'H', hs.toggleConsole)
 function fixAudioBalance()
   local device = hs.audiodevice.defaultOutputDevice()
   if device then
-    device:setBalance(0.5)
-    hs.alert('Audio balance fixed 🎧✅', 1)
+    local balanceBefore = device:balance()
+    local balanceAfter = 0.5
+    if balanceBefore ~= balanceAfter then
+      device:setBalance(balanceAfter)
+      hs.alert('Audio balance fixed 🎧✅ | was: ' .. balanceBefore, 1)
+    end
   end
 end
 
