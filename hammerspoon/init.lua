@@ -7,6 +7,25 @@ hs.hotkey.bind(hyper, 'R', hs.reload)
 hs.hotkey.bind(hyper, 'H', hs.toggleConsole)
 
 --
+-- Audio balance fix
+--
+
+function fixAudioBalance()
+  local device = hs.audiodevice.defaultOutputDevice()
+  if device then
+    device:setBalance(0.5)
+    hs.alert('Audio balance fixed 🎧✅', 1)
+  end
+end
+
+hs.audiodevice.watcher.setCallback(function(event)
+  if event == "dev#" or event == "dOut" then
+    fixAudioBalance()
+  end
+end)
+hs.audiodevice.watcher.start()
+
+--
 -- Keybindings
 --
 

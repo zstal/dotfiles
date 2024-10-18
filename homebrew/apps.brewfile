@@ -17,7 +17,6 @@ cask 'sublime-text'
 cask 'visual-studio-code'
 
 # install MAS apps
-# 1019371109  Balance Lock
 # 1358823008  Flighty
 # 6444667067  Hyperduck
 # 1464122853  NextDNS
