@@ -16,4 +16,5 @@
 	"show_encoding": true,
 	"show_full_path": true,
 	"trim_trailing_white_space_on_save": "all",
+	"update_check": true,
 }
