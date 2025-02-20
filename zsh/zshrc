@@ -202,8 +202,7 @@ function git-stale-branches () {
 alias dg="dig +short"
 alias myip='echo $(curl --silent https://ifconfig.me)'
 alias pyserver="python3 -m http.server"
-alias ytv360="yt-dlp --format 'best[height<=360][ext=mp4]/bestvideo[height<=360][ext=mp4]+bestaudio/best'"
-alias ytv720="yt-dlp --format 'best[height<=720][ext=mp4]/bestvideo[height<=720][ext=mp4]+bestaudio/best'"
+alias yt="yt-dlp --format 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]'"
 alias yta="yt-dlp --extract-audio --audio-format opus"
 
 #
