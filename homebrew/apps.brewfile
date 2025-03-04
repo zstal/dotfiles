@@ -9,9 +9,7 @@ cask 'itsycal'
 cask 'monitorcontrol'
 cask 'netnewswire'
 cask 'sanesidebuttons'
-cask 'selfcontrol'
 cask 'sublime-text'
-cask 'visual-studio-code'
 
 # install MAS apps
 # 1358823008  Flighty
