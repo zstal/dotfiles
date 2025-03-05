@@ -94,9 +94,7 @@ function take() {
 }
 
 # code & diff
-alias c="code"
-alias f="fork"
-alias s="subl"
+alias f="fork ."
 alias x="xed ."
 
 # misc command line
