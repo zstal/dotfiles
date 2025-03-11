@@ -11,10 +11,3 @@ cask 'netnewswire'
 cask 'sanesidebuttons'
 cask 'sublime-text'
 cask 'whatsyoursign'
-
-# install MAS apps
-# 1358823008  Flighty
-# 6444667067  Hyperduck
-# 1030461463  PDFCombo
-# 1451685025  WireGuard
-# 1221250572  Xnip
