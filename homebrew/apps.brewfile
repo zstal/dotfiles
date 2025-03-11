@@ -10,6 +10,7 @@ cask 'monitorcontrol'
 cask 'netnewswire'
 cask 'sanesidebuttons'
 cask 'sublime-text'
+cask 'whatsyoursign'
 
 # install MAS apps
 # 1358823008  Flighty
