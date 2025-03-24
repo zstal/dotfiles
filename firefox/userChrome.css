@@ -1,22 +1,5 @@
-/*
- * ALL WINDOWS
-*/
-
-/* remove Tree Style Tabs header */
-#sidebar-header {
-  visibility: collapse;
-}
-
-/*
- * REGULAR WINDOWS
-*/
-
 /* hides the native tabs - turn on "Title Bar" in "Customize Toolbar" */
 #main-window:not([privatebrowsingmode])
 #TabsToolbar {
   visibility: collapse;
-}
-
-#sidebar-box, #sidebar-box #sidebar {
-    min-width: 50px !important;
 }
