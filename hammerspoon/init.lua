@@ -90,6 +90,20 @@ if caffeine then
 end
 
 --
+-- Periodic reminder
+--
+
+local intervalMinutes = 60
+local function showReminder()
+    hs.notify.new({
+        title = "Reminder",
+        informativeText = "Another " .. intervalMinutes .. " minutes have passed",
+        withdrawAfter = 10
+    }):send()
+end
+hs.timer.doEvery(intervalMinutes * 60, showReminder)
+
+--
 -- Misc
 --
 
