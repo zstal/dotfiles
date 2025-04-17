@@ -93,12 +93,12 @@ end
 -- Periodic reminder
 --
 
-local intervalMinutes = 60
+local intervalMinutes = 45
 local function showReminder()
     hs.notify.new({
         title = "Reminder",
         informativeText = "Another " .. intervalMinutes .. " minutes have passed",
-        withdrawAfter = 10
+        withdrawAfter = 0 -- 0 means never auto-withdraw
     }):send()
 end
 hs.timer.doEvery(intervalMinutes * 60, showReminder)
