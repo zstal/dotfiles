@@ -9,18 +9,18 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// swiftlint:disable:next &lt;#rule#&gt;</string>
+	<string>// swiftlint:disable:next &lt;#type#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1B8C3E84-75CB-47D2-A8F8-A16FC001D876</string>
+	<string>517ABD42-E840-430A-B804-D3E4E6C3D27B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>swiftlint:disable</string>
+	<string>swiftlint disable next</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
