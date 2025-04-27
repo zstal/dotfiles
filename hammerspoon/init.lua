@@ -19,10 +19,12 @@ function fixAudioBalance()
   local device = hs.audiodevice.defaultOutputDevice()
   if device then
     local actualBalance = device:balance()
-    local wantedBalance = 0.5
-    if not isEqual(actualBalance, wantedBalance) then
-      device:setBalance(wantedBalance)
-      hs.alert('Audio balance fixed 🎧✅', 1)
+    if actualBalance then
+      local wantedBalance = 0.5
+      if not isEqual(actualBalance, wantedBalance) then
+        device:setBalance(wantedBalance)
+        hs.alert('Audio balance fixed 🎧✅', 1)
+      end
     end
   end
 end
@@ -95,11 +97,11 @@ end
 
 local intervalMinutes = 45
 local function showReminder()
-    hs.notify.new({
-        title = "Reminder",
-        informativeText = "Another " .. intervalMinutes .. " minutes have passed",
+  hs.notify.new({
+    title = "Reminder",
+    informativeText = "Another " .. intervalMinutes .. " minutes have passed",
         withdrawAfter = 0 -- 0 means never auto-withdraw
-    }):send()
+      }):send()
 end
 hs.timer.doEvery(intervalMinutes * 60, showReminder)
 
