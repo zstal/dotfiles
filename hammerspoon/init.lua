@@ -5,6 +5,7 @@
 local hyper = {'⌃', '⌥', '⌘'}
 hs.hotkey.bind(hyper, 'R', hs.reload)
 hs.hotkey.bind(hyper, 'H', hs.toggleConsole)
+hs.hotkey.bind(hyper, 'K', hs.console.clearConsole)
 
 --
 -- Audio balance fix
@@ -17,15 +18,13 @@ end
 
 function fixAudioBalance()
   local device = hs.audiodevice.defaultOutputDevice()
-  if device then
-    local actualBalance = device:balance()
-    if actualBalance then
-      local wantedBalance = 0.5
-      if not isEqual(actualBalance, wantedBalance) then
-        device:setBalance(wantedBalance)
-        hs.alert('Audio balance fixed 🎧✅', 1)
-      end
-    end
+  if not device then print("[fixAudioBalance] device not available"); return end
+  local actualBalance = device:balance()
+  if not actualBalance then print("[fixAudioBalance] balance not available"); return end
+  local wantedBalance = 0.5
+  if not isEqual(actualBalance, wantedBalance) then
+    device:setBalance(wantedBalance)
+    hs.alert('Audio balance fixed 🎧✅', 1)
   end
 end
 
