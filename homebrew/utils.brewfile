@@ -14,7 +14,7 @@ brew 'ripgrep'
 brew 'ruby@3'
 brew 'sd'
 brew 'tarsnap'
-brew 'tldr'
+brew 'tlrc' # official tldr client written in Rust
 brew 'yt-dlp'
 brew 'z'
 brew 'zsh-syntax-highlighting'
