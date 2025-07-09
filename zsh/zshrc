@@ -89,6 +89,12 @@ alias tt="tree -L 2"
 alias ttt="tree -L 3"
 alias xx="chmod u+x"
 
+function fdrg() {
+    local FD_PATTERN=$1
+    local RG_PATTERN=$2
+    fd "$FD_PATTERN" -X rg "$RG_PATTERN"
+}
+
 function take() {
     mkdir -p $@ && cd ${@:$#}
 }
