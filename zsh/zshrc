@@ -213,8 +213,28 @@ alias yta="yt-dlp --extract-audio --audio-format opus"
 #
 # image manipulation
 #
-alias happend="convert +append -gravity center" # horizontal append images
-alias vappend="convert -append -gravity center" # vertical append images
+function __append_images() {
+  local mode="$1"   # +append (horizontal) or -append (vertical)
+  shift
+
+  if [ "$#" -lt 2 ]; then
+    echo "At least 2 parameters are needed to concatenate."
+    return 1
+  fi
+
+  ts=$(date -u +"%Y-%m-%dT%H-%M-%SZ")
+  out="output-$ts.png"
+
+  magick -gravity center "$@" "$mode" "$out"
+}
+
+function happend() {
+  __append_images +append "$@"
+}
+
+function vappend() {
+  __append_images -append "$@"
+}
 
 alias exif="exiftool -s -G" # group by raw tag names
 alias ,,="exiftool -all= -overwrite_original" # strip exif in-place
