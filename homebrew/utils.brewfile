@@ -9,6 +9,7 @@ brew 'imagemagick'
 brew 'magic-wormhole'
 brew 'python@3'
 brew 'ripgrep'
+brew 'ruby@3'
 brew 'sd'
 brew 'tarsnap'
 brew 'tlrc' # official tldr client written in Rust
