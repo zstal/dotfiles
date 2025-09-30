@@ -212,14 +212,6 @@ defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 defaults write com.apple.terminal SecureKeyboardEntry -bool true
 
 #
-# iTerm2
-#
-
-# Specify the preferences directory & load the prefs from there
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iterm2"
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-
-#
 # Time Machine
 #
 

@@ -41,7 +41,7 @@ hs.audiodevice.watcher.start()
 
 hs.fnutils.each({
   { key = '`', app = 'Sublime Text' },
-  { key = '1', app = 'iTerm' },
+  { key = '1', app = 'Terminal' },
   { key = '2', app = 'Finder' },
   { key = '3', app = 'Fork' },
 }, function(item)
