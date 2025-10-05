@@ -1,4 +1,4 @@
-# --------------------
+#!/bin/zsh
 #
 # ZSH CONFIG
 #
@@ -59,6 +59,7 @@ alias ,hosts="subl /etc/hosts"
 alias ,hs="subl ~/.hammerspoon/init.lua"
 alias ,loc="subl ~/.local.zsh"
 alias ,rc="subl ~/.zshrc"
+alias subl="open -a 'Sublime Text'"
 
 #
 # terminal and packages
