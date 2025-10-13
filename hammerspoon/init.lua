@@ -43,7 +43,7 @@ hs.fnutils.each({
   { key = '`', app = 'Sublime Text' },
   { key = '1', app = 'Terminal' },
   { key = '2', app = 'Finder' },
-  { key = '3', app = 'Fork' },
+  { key = '3', app = 'Firefox' },
 }, function(item)
 
 local appActivation = function()
