@@ -74,6 +74,10 @@ alias dl="cd ~/Downloads"
 alias dotf="cd ~/.dotfiles"
 alias dt="cd ~/Desktop"
 
+function mkcd () {
+  mkdir -p "$1" && cd "$1"
+}
+
 alias ..="cd .."
 alias l="ls -1F"
 alias ll="ls -ahlF"
