@@ -74,8 +74,6 @@ alias dl="cd ~/Downloads"
 alias dotf="cd ~/.dotfiles"
 alias dt="cd ~/Desktop"
 
-alias ....="cd ../../.."
-alias ...="cd ../.."
 alias ..="cd .."
 alias l="ls -1F"
 alias ll="ls -ahlF"
@@ -85,15 +83,7 @@ alias o="open ."
 alias path="echo $PATH"
 alias rmrf="rm -rf"
 alias rr="[ -f ~/.zshrc ] && . ~/.zshrc && echo '✅ Successfully reloaded .zshrc'"
-alias tt="tree -L 2"
-alias ttt="tree -L 3"
 alias xx="chmod u+x"
-
-function fdrg() {
-    local FD_PATTERN=$1
-    local RG_PATTERN=$2
-    fd "$FD_PATTERN" -X rg "$RG_PATTERN"
-}
 
 function take() {
     mkdir -p $@ && cd ${@:$#}
