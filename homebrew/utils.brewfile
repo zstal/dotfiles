@@ -8,9 +8,9 @@ brew 'git'
 brew 'imagemagick'
 brew 'magic-wormhole'
 brew 'ocrmypdf' # make scanned image PDFs searchable
-brew 'python@3'
+brew 'python'
 brew 'ripgrep'
-brew 'ruby@3'
+brew 'ruby'
 brew 'sd'
 brew 'tarsnap'
 brew 'tlrc' # official tldr client written in Rust
