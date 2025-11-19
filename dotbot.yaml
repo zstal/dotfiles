@@ -3,11 +3,12 @@
       mode: 0700
     ~/.ssh/:
       mode: 0700
-    ~/.ssh/keys:
+    ~/.ssh/keys/:
       mode: 0700
 
 - shell:
   - [touch ~/.hushlogin]
+  - [touch ~/.gituser]
 
 - defaults:
     link:
