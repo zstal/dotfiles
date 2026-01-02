@@ -12,6 +12,11 @@ export LANG=en_US.UTF-8
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+if [[ $(uname) == Darwin ]]; then
+    # macOS uses uppercase UUIDs which is not RFC-compliant
+    alias uuidgen="uuidgen | tr '[:upper:]' '[:lower:]'"
+fi
+
 #
 # version control info
 #
