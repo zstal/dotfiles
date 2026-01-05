@@ -104,6 +104,7 @@ alias s="subl"
 alias x="xed ."
 
 # misc command line
+alias b="bundle install"
 alias be="bundle exec"
 alias bep="bundle exec pod"
 alias p="bundle exec pod install"
