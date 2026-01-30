@@ -99,7 +99,6 @@ function take() {
 }
 
 # code & diff
-alias c="claude"
 alias f="fork ."
 alias s="subl"
 alias x="xed ."
