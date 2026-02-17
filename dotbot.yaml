@@ -16,6 +16,8 @@
       relink: true # removes the old target if it's a symlink
 
 - link:
+    ~/.claude/settings.json:
+      path: claude/settings.json
     ~/.gitconfig:
       path: git/gitconfig
     ~/.hammerspoon:
