@@ -69,10 +69,10 @@ local function updateCaffeineDisplay(state)
   local result
   if state then
     caffeine:setIcon('Spoons/Caffeine.spoon/caffeine-on.pdf')
-    hs.alert('Caffeine enabled ☕️✅', 1)
+    hs.alert('☕️✅', 1)
   else
     caffeine:setIcon('Spoons/Caffeine.spoon/caffeine-off.pdf')
-    hs.alert('Caffeine disabled ☕️❌', 1)
+    hs.alert('☕️❌', 1)
   end
 end
 
