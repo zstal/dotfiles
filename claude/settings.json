@@ -20,5 +20,6 @@
       "Bash(xcrun:*)",
       "mcp__serena__*"
     ]
-  }
+  },
+  "skipDangerousModePermissionPrompt": true
 }

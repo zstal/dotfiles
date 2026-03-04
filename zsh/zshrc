@@ -98,6 +98,7 @@ function take() {
 }
 
 # code & diff
+alias claude!="claude --dangerously-skip-permissions"
 alias f="fork ."
 alias s="subl"
 alias x="xed ."
