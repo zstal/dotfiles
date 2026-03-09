@@ -15,6 +15,7 @@
       "Bash(rg:*)",
       "Bash(swift build:*)",
       "Bash(swift test:*)",
+      "Bash(wc:*)",
       "Bash(xargs sed:*)",
       "Bash(xcodebuild:*)",
       "Bash(xcrun:*)",
