@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "Bash(/usr/libexec/PlistBuddy:*)",
       "Bash(awk:*)",
       "Bash(cat:*)",
       "Bash(find:*)",
@@ -19,7 +20,8 @@
       "Bash(xargs sed:*)",
       "Bash(xcodebuild:*)",
       "Bash(xcrun:*)",
-      "mcp__serena__*"
+      "mcp__serena__*",
+      "mcp__xcode__*"
     ]
   },
   "skipDangerousModePermissionPrompt": true
