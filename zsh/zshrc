@@ -293,8 +293,7 @@ function dock_clear_all() {
     killall Dock
 }
 
-function dock_spacer_add3() {
-    defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+function dock_spacer_add() {
     defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
     defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
     killall Dock
