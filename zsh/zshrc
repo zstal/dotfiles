@@ -107,6 +107,7 @@ alias x="xed ."
 # misc command line
 alias b="bundle install"
 alias be="bundle exec"
+alias bef="bundle exec fastlane"
 alias bep="bundle exec pod"
 alias p="bundle exec pod install"
 alias rg="rg --smart-case"
