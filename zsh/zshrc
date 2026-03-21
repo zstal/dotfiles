@@ -45,12 +45,6 @@ else
     export EDITOR='subl -w'
 fi
 
-
-function include() {
-    # use if to avoid error code return
-    if [[ -f "$1" ]]; then source "$1"; fi
-}
-
 # --------------------
 #
 # ALIASES
@@ -325,6 +319,12 @@ function fs() {
     local files_to_open=$(fd --type f | fzf --multi)
     [ -z "$files_to_open" ] && echo > /dev/stderr "ERROR: no files to open" && return 1
     subl "$files_to_open"
+}
+
+# helper
+function include() {
+    # use if to avoid error code return
+    if [[ -f "$1" ]]; then source "$1"; fi
 }
 
 # extensions
