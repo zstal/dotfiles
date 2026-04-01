@@ -145,6 +145,7 @@ alias grv="git remote --verbose"
 alias gss="git status --short"
 alias gst="git status"
 alias gw="git status --short && git commit -m WIP"
+alias lg="lazygit"
 
 #
 # github
