@@ -3,3 +3,10 @@
 #TabsToolbar {
   visibility: collapse;
 }
+
+/* centers the elements on the bookmarks bar */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+#PlacesToolbarItems {
+  display: flex !important;
+  justify-content: center !important;
+}
