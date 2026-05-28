@@ -1,6 +1,6 @@
 cask 'alfred'
 cask 'appcleaner'
-cask 'firefox'
+cask 'brave-browser'
 cask 'fork'
 cask 'hammerspoon'
 cask 'iina'
