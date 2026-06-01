@@ -11,6 +11,5 @@ cask 'sublime-text'
 
 mas 'Flighty', id: 1358823008
 mas 'Hyperduck', id: 6444667067
-mas 'PDFCombo', id: 1030461463
 mas 'WireGuard', id: 1451685025
 mas 'Xnip', id: 1221250572
