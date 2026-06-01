@@ -3,8 +3,6 @@
       mode: 0700
     ~/.ssh/:
       mode: 0700
-    ~/.ssh/keys/:
-      mode: 0700
     ~/Pictures/Screenshots:
       mode: 0700
     ~/Pictures/SimulatorScreenshots:
