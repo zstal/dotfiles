@@ -11,6 +11,7 @@
 - shell:
   - [touch ~/.hushlogin]
   - [touch ~/.gituser]
+  - [touch ~/.gitsign]
   - [defaults write com.apple.iphonesimulator ScreenShotSaveLocation -string "~/Pictures/SimulatorScreenshots"]
 
 - defaults:

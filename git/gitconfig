@@ -18,3 +18,4 @@
 
 [include]
 	path = ~/.gituser
+	path = ~/.gitsign
