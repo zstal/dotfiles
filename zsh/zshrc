@@ -38,6 +38,9 @@ setopt PROMPT_SUBST
 NEWLINE=$'\n'
 PROMPT='%F{cyan}%~%f %F{yellow}${vcs_info_msg_0_}%f${NEWLINE}%F{red}%(?..[%?] )%f%# '
 
+# commands starting with a space will not be saved to history
+setopt HIST_IGNORE_SPACE
+
 # preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='nano'
