@@ -62,6 +62,7 @@ alias ,hosts="subl /etc/hosts"
 alias ,hs="subl ~/.hammerspoon/init.lua"
 alias ,loc="subl ~/.local.zsh"
 alias ,rc="subl ~/.zshrc"
+alias ,spm="bat ~/.swiftpm/configuration/registries.json"
 
 #
 # terminal and packages
