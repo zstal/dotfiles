@@ -5,13 +5,10 @@
       mode: 0700
     ~/Pictures/Screenshots:
       mode: 0700
-    ~/Pictures/SimulatorScreenshots:
-      mode: 0700
 
 - shell:
   - [touch ~/.hushlogin]
   - [touch ~/.gituser]
-  - [defaults write com.apple.iphonesimulator ScreenShotSaveLocation -string "~/Pictures/SimulatorScreenshots"]
 
 - defaults:
     link:
