@@ -18,9 +18,9 @@ end
 
 function fixAudioBalance()
   local device = hs.audiodevice.defaultOutputDevice()
-  if not device then print("[fixAudioBalance] device not available"); return end
+  if not device then print('[fixAudioBalance] device not available'); return end
   local actualBalance = device:balance()
-  if not actualBalance then print("[fixAudioBalance] balance not available"); return end
+  if not actualBalance then print('[fixAudioBalance] balance not available'); return end
   local wantedBalance = 0.5
   if not isEqual(actualBalance, wantedBalance) then
     device:setBalance(wantedBalance)
@@ -29,7 +29,7 @@ function fixAudioBalance()
 end
 
 hs.audiodevice.watcher.setCallback(function(event)
-  if event == "dev#" or event == "dOut" then
+  if event == 'dev#' or event == 'dOut' then
     fixAudioBalance()
   end
 end)
@@ -89,6 +89,20 @@ if caffeine then
   caffeine:setClickCallback(toggleCaffeine)
   updateCaffeineDisplay(hs.caffeinate.get('displayIdle'))
 end
+
+--
+-- WindowHalfsAndThirds
+--
+hs.loadSpoon('WindowHalfsAndThirds')
+
+spoon.WindowHalfsAndThirds:bindHotkeys({
+  max_toggle  = { {'⌃', '⌘'}, 'X' },
+  left_half   = { {'⌃', '⌘'}, '1' },
+  center      = { {'⌃', '⌘'}, '2' },
+  right_half  = { {'⌃', '⌘'}, '3' },
+  -- top_half    = { {'⌃', '⌘'}, 'Up' },
+  -- bottom_half = { {'⌃', '⌘'}, 'Down' },
+})
 
 --
 -- Misc
