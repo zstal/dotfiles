@@ -8,34 +8,6 @@ hs.hotkey.bind(hyper, 'H', hs.toggleConsole)
 hs.hotkey.bind(hyper, 'K', hs.console.clearConsole)
 
 --
--- Audio balance fix
---
-
-function isEqual(a, b)
-  epsilon = 1e-10
-  return math.abs(a - b) <= epsilon
-end
-
-function fixAudioBalance()
-  local device = hs.audiodevice.defaultOutputDevice()
-  if not device then print('[fixAudioBalance] device not available'); return end
-  local actualBalance = device:balance()
-  if not actualBalance then print('[fixAudioBalance] balance not available'); return end
-  local wantedBalance = 0.5
-  if not isEqual(actualBalance, wantedBalance) then
-    device:setBalance(wantedBalance)
-    hs.alert('Audio balance fixed 🎧✅', 1)
-  end
-end
-
-hs.audiodevice.watcher.setCallback(function(event)
-  if event == 'dev#' or event == 'dOut' then
-    fixAudioBalance()
-  end
-end)
-hs.audiodevice.watcher.start()
-
---
 -- Keybindings
 --
 
@@ -58,6 +30,20 @@ end
 
 hs.hotkey.bind({'⌘', '⇧'}, item.key, appActivation)
 end)
+
+--
+-- WindowHalfsAndThirds
+--
+hs.loadSpoon('WindowHalfsAndThirds')
+
+spoon.WindowHalfsAndThirds:bindHotkeys({
+  max_toggle  = { {'⌃', '⌘'}, 'X' },
+  left_half   = { {'⌃', '⌘'}, '1' },
+  center      = { {'⌃', '⌘'}, '2' },
+  right_half  = { {'⌃', '⌘'}, '3' },
+  -- top_half    = { {'⌃', '⌘'}, 'Up' },
+  -- bottom_half = { {'⌃', '⌘'}, 'Down' },
+})
 
 --
 -- Caffeine
@@ -91,18 +77,32 @@ if caffeine then
 end
 
 --
--- WindowHalfsAndThirds
+-- Audio balance fix
 --
-hs.loadSpoon('WindowHalfsAndThirds')
 
-spoon.WindowHalfsAndThirds:bindHotkeys({
-  max_toggle  = { {'⌃', '⌘'}, 'X' },
-  left_half   = { {'⌃', '⌘'}, '1' },
-  center      = { {'⌃', '⌘'}, '2' },
-  right_half  = { {'⌃', '⌘'}, '3' },
-  -- top_half    = { {'⌃', '⌘'}, 'Up' },
-  -- bottom_half = { {'⌃', '⌘'}, 'Down' },
-})
+function isEqual(a, b)
+  epsilon = 1e-10
+  return math.abs(a - b) <= epsilon
+end
+
+function fixAudioBalance()
+  local device = hs.audiodevice.defaultOutputDevice()
+  if not device then print('[fixAudioBalance] device not available'); return end
+  local actualBalance = device:balance()
+  if not actualBalance then print('[fixAudioBalance] balance not available'); return end
+  local wantedBalance = 0.5
+  if not isEqual(actualBalance, wantedBalance) then
+    device:setBalance(wantedBalance)
+    hs.alert('Audio balance fixed 🎧✅', 1)
+  end
+end
+
+hs.audiodevice.watcher.setCallback(function(event)
+  if event == 'dev#' or event == 'dOut' then
+    fixAudioBalance()
+  end
+end)
+hs.audiodevice.watcher.start()
 
 --
 -- Misc
