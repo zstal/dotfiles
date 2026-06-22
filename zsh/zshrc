@@ -277,6 +277,14 @@ function rename_files_using_exif() {
 # misc
 #
 
+function ts() {
+    if [ "$#" -eq 0 ]; then
+        date +%s
+    else
+        date -r "$1" "+%Y-%m-%d %H:%M:%S %Z"
+    fi
+}
+
 function openports() {
     lsof -PiTCP -sTCP:LISTEN
 }
