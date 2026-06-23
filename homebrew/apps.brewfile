@@ -8,7 +8,3 @@ cask 'itsycal'
 cask 'netnewswire'
 cask 'sanesidebuttons'
 cask 'sublime-text'
-
-mas 'Flighty', id: 1358823008
-mas 'Hyperduck', id: 6444667067
-mas 'WireGuard', id: 1451685025
