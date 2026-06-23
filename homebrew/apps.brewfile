@@ -7,7 +7,6 @@ cask 'iina'
 cask 'itsycal'
 cask 'netnewswire'
 cask 'sanesidebuttons'
-cask 'shottr'
 cask 'sublime-text'
 
 mas 'Flighty', id: 1358823008
