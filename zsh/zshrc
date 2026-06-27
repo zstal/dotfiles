@@ -126,6 +126,7 @@ function xcp() {
 
 function xcs() {
     sudo xcode-select --switch $(find /Applications -maxdepth 1 -iname 'xcode*.app' | fzf)
+    xcode-select --print-path
 }
 
 #
