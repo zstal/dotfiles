@@ -68,15 +68,6 @@ alias ,spm="bat ~/.swiftpm/configuration/registries.json"
 # terminal and packages
 #
 alias bruu="brew update && brew upgrade"
-
-brewf() {
-  if [ "$#" -lt 1 ]; then
-    echo "Formula name missing"
-    return 1
-  fi
-    bat $(brew formula $1)
-}
-
 alias hp="history -p && echo '✅ history cleared'"
 
 #

@@ -1,6 +1,8 @@
 - create:
     ~/.config/:
       mode: 0700
+    ~/.local/bin:
+      mode: 0700
     ~/.ssh/:
       mode: 0700
     ~/Pictures/Screenshots:
@@ -22,6 +24,8 @@
       path: git/gitconfig
     ~/.hammerspoon:
       path: hammerspoon/
+    ~/.local/bin/brew-bat:
+      path: bin/brew-bat
     ~/Library/Application Support/Code/User/keybindings.json:
       path: vscode/keybindings.json
     ~/Library/Application Support/Sublime Text/Packages/User/Default.sublime-keymap:

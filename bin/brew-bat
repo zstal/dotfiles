@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! command -v bat >/dev/null 2>&1; then
+  echo "error: bat is not installed. Run: brew install bat" >&2
+  exit 1
+fi
+
+# Let `brew cat` resolve formula/cask names and print the Ruby source,
+# then pipe it through bat for highlighting.
+brew cat "$@" | bat --language=ruby
