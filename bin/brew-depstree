@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+for formula in $(brew leaves); do
+  echo "=== $formula ==="
+  brew deps "$formula"
+  echo
+done

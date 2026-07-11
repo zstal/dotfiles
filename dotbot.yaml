@@ -26,6 +26,8 @@
       path: hammerspoon/
     ~/.local/bin/brew-bat:
       path: bin/brew-bat
+    ~/.local/bin/brew-depstree:
+      path: bin/brew-depstree
     ~/Library/Application Support/Code/User/keybindings.json:
       path: vscode/keybindings.json
     ~/Library/Application Support/Sublime Text/Packages/User/Default.sublime-keymap:
