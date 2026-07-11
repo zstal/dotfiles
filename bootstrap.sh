@@ -6,8 +6,13 @@
 
 set -euo pipefail
 
-# clear the Dock & force a UI refresh
-defaults write com.apple.dock persistent-apps -array && killall Dock
+# clears the Dock, adds spacers then forces a UI refresh
+defaults write com.apple.dock persistent-others -array
+defaults write com.apple.dock persistent-apps -array
+for i in {1..3}; do
+  defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+done
+killall Dock
 
 echo '🔄 Configuring macOS settings...'
 ./macos/macsetup.sh
