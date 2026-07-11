@@ -1,20 +1,15 @@
 brew 'bat'
 brew 'cloc'
-brew 'doggo'
 brew 'duti'
 brew 'exiftool'
 brew 'fd'
+brew 'ffmpeg'
 brew 'fzf'
-brew 'git'
 brew 'imagemagick'
-brew 'magic-wormhole'
-brew 'ocrmypdf' # make scanned image PDFs searchable
-brew 'python'
 brew 'ripgrep'
-brew 'ruby'
-brew 'sd'
 brew 'tarsnap'
-brew 'tlrc' # official tldr client written in Rust
 brew 'yt-dlp'
-brew 'z'
 brew 'zsh-syntax-highlighting'
+
+# brew 'magic-wormhole' # secure file transfer
+# brew 'ocrmypdf' # makes scanned PDFs searchable and copyable
