@@ -19,7 +19,7 @@ echo '🔄 Ensuring homebrew is installed...'
 command -v brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo '🔄 Installing CLI tools via homebrew...'
-/opt/homebrew/bin/brew bundle install --file homebrew/utils.brewfile --verbose
+/opt/homebrew/bin/brew bundle install --file homebrew/cli.brewfile --verbose
 
 echo '🔄 Installing GUI apps via homebrew...'
 /opt/homebrew/bin/brew bundle install --file homebrew/apps.brewfile --verbose
