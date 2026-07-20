@@ -2,7 +2,7 @@
 // and are overridden in turn by syntax-specific settings.
 {
 	"ensure_newline_at_eof_on_save": true,
-	"font_size": 18,
+	"font_size": 16,
 	"ignored_packages":[
 		"Vintage",
 	],
