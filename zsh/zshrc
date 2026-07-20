@@ -63,6 +63,9 @@ alias ,hosts="subl /etc/hosts"
 alias ,hs="subl ~/.hammerspoon/init.lua"
 alias ,loc="subl ~/.local.zsh"
 alias ,rc="subl ~/.zshrc"
+alias ,resetaudio="sudo pkill coreaudiod"
+alias ,resetbt="sudo pkill -x bluetoothd"
+alias ,resetdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 #
 # terminal and packages
@@ -288,14 +291,6 @@ function ts() {
 
 function openports() {
     lsof -PiTCP -sTCP:LISTEN
-}
-
-function dnsflush() {
-    sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
-}
-
-function btrestart() {
-    sudo pkill bluetoothd
 }
 
 function dock_clear_all() {
