@@ -1,29 +1,41 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(/usr/libexec/PlistBuddy:*)",
-      "Bash(awk:*)",
-      "Bash(cat:*)",
-      "Bash(find:*)",
-      "Bash(gh pr view:*)",
-      "Bash(git diff:*)",
-      "Bash(git mv:*)",
-      "Bash(git pull:*)",
-      "Bash(git push:*)",
-      "Bash(git status:*)",
-      "Bash(grep:*)",
-      "Bash(ls:*)",
-      "Bash(rg:*)",
-      "Bash(swift build:*)",
-      "Bash(swift test:*)",
-      "Bash(wc:*)",
-      "Bash(xargs sed:*)",
-      "Bash(xcodebuild:*)",
-      "Bash(xcrun:*)",
-      "mcp__serena__*",
-      "mcp__xcode__*"
-    ]
-  },
-  "skipDangerousModePermissionPrompt": true,
-  "model": "us.anthropic.claude-opus-4-8"
+    "enabledPlugins":
+    {
+        "figma@claude-plugins-official": true,
+        "swift-lsp@claude-plugins-official": true
+    },
+    "permissions":
+    {
+        "allow":
+        [
+            "Bash(/usr/libexec/PlistBuddy:*)",
+            "Bash(awk:*)",
+            "Bash(cat:*)",
+            "Bash(find:*)",
+            "Bash(gh pr view:*)",
+            "Bash(git diff:*)",
+            "Bash(git mv:*)",
+            "Bash(git pull:*)",
+            "Bash(git push:*)",
+            "Bash(git status:*)",
+            "Bash(grep:*)",
+            "Bash(ls:*)",
+            "Bash(rg:*)",
+            "Bash(swift build:*)",
+            "Bash(swift test:*)",
+            "Bash(wc:*)",
+            "Bash(xargs sed:*)",
+            "Bash(xcodebuild:*)",
+            "Bash(xcrun:*)",
+            "mcp__serena__*",
+            "mcp__xcode__*"
+        ]
+    },
+    "skipDangerousModePermissionPrompt": true,
+    "statusLine":
+    {
+        "command": "~/.claude/statusline.sh",
+        "type": "command"
+    },
+    "theme": "auto"
 }
