@@ -1,3 +1,4 @@
+# cask_args appdir: "~/Applications"
 cask 'alfred'
 cask 'appcleaner'
 cask 'brave-browser'
