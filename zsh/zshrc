@@ -86,8 +86,7 @@ function mkcd () {
 }
 
 alias ..="cd .."
-alias l="ls -1F"
-alias ll="ls -ahlF"
+alias l="ls -ahlF"
 alias ls="ls --color=auto"
 alias mv="mv -i"
 alias o="open ."
