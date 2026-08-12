@@ -233,7 +233,7 @@ function __append_images() {
   fi
 
   ts=$(date -u +"%Y-%m-%dT%H-%M-%SZ")
-  out="output-$ts.png"
+  out="aggregate-$ts.png"
 
   magick -gravity center "$@" "$mode" "$out"
 }
