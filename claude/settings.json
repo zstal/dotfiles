@@ -24,6 +24,7 @@
       "mcp__xcode__*"
     ]
   },
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
@@ -34,6 +35,5 @@
   },
   "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
-  "theme": "auto",
-  "model": "sonnet"
+  "theme": "auto"
 }
