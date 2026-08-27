@@ -1,4 +1,8 @@
 - create:
+    ~/.codex/:
+      mode: 0700
+    ~/.claude/:
+      mode: 0700
     ~/.config/:
       mode: 0700
     ~/.config/tmux:
@@ -20,6 +24,10 @@
       relink: true # removes the old target if it's a symlink
 
 - link:
+    ~/.codex/AGENTS.md:
+      path: agents/AGENTS.md
+    ~/.claude/CLAUDE.md:
+      path: agents/AGENTS.md
     ~/.config/tmux/tmux.conf:
       path: tmux/tmux.conf
     ~/.gitconfig:
