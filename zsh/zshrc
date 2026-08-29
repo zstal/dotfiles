@@ -57,7 +57,6 @@ fi
 #
 # convenience shortcuts
 #
-alias ,="open ."
 alias ,dotf="subl ~/.dotfiles"
 alias ,hosts="subl /etc/hosts"
 alias ,hs="subl ~/.hammerspoon/init.lua"
