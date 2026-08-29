@@ -70,6 +70,7 @@ Treat the following rules as a practical baseline, not an exhaustive rulebook
 
 ## Style
 - Use explicit types in property declarations, don't rely on type inference
+- Avoid leaving redundant verbose comments. The code should be self-descriptive based on clear naming and code structure. Comments should be used only to explain non-obvious reasons for WHY things were architected that way.
 
 ## Scope
 - Prefer current APIs over legacy compatibility patterns unless older OS support is explicitly required
