@@ -66,15 +66,13 @@ Default to surfacing uncertainty, not hiding it.
 
 # Swift/SwiftUI code
 
-## unstructured (TODO)
-- Use explicit types in property declarations, don't rely on type inference
-- Don't use single line closures to make breakpointing easier
+Treat the following rules as a practical baseline, not an exhaustive rulebook
 
-- Views should call out to endpoints on the viewmodel, don't impl. behavior in views
+## Style
+- Use explicit types in property declarations, don't rely on type inference
 
 ## Scope
 - Prefer current APIs over legacy compatibility patterns unless older OS support is explicitly required
-- Treat this as a practical baseline, not an exhaustive rulebook
 
 ## Always Prefer These Replacements
 - `foregroundColor(...)` -> `foregroundStyle(...)`
@@ -90,18 +88,20 @@ Default to surfacing uncertainty, not hiding it.
 
 ## Closure semantics
 - Always do the `guard let self else { return }` opener in closures that capture `weak self`
+- Other than the aforementioned case, don't use single line closures to allow easy breakpointing
 
 ## SwiftUI Interaction and Accessibility Defaults
 - Prefer `Button` over `onTapGesture` for tappable UI
 - Use `onTapGesture` only when tap count or tap location is specifically required
 - Prefer inline button labels with title + SF Symbol (`Button("Title", systemImage: "...")`) over image-only buttons
 - Avoid accessibility regressions caused by gesture-driven controls and missing labels
-- When breaking out parts, use `@ViewBuilder private func widget() -> some View { ... }`
 
 ## Observation, State, and View Structure
 - Avoid splitting large views into computed-property `some View` fragments; extract real subviews/types instead
+- A View should be purely declarative and call out to endpoints on its viewmodel. Don't implement behavior in Views.
+- Make all methods and properties private unless otherwise required.
 - Keep intelligent invalidation effective by using explicit subviews with `@Observable` data flow
-- Use `.assign` vs `.sink` when you can so there's no need to store a Cancellable
+- Use `.assign` instead of `.sink` when you can so there's no need to store a Cancellable
 
 ## Typography and Text Formatting
 - Avoid hardcoded fonts like `.font(.system(size: ...))` in most cases
@@ -123,3 +123,6 @@ Default to surfacing uncertainty, not hiding it.
 - Do not pack many unrelated types into one file; split by responsibility to help compile times and maintainability
 - Be skeptical of excessive `GeometryReader` usage and fixed frame sizes
 - Prefer modern layout alternatives when possible (e.g. `visualEffect`, `containerRelativeFrame`, layout APIs that preserve adaptivity)
+
+## Logging
+- Strive to use static strings in logs and put dynamic elements as additional info
