@@ -127,3 +127,6 @@ Treat the following rules as a practical baseline, not an exhaustive rulebook
 
 ## Logging
 - Strive to use static strings in logs and put dynamic elements as additional info
+
+## Constants
+- For single file constants use `private enum Constants` at the top of the file with `static let` values.
