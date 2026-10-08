@@ -68,65 +68,76 @@ Default to surfacing uncertainty, not hiding it.
 
 Treat the following rules as a practical baseline, not an exhaustive rulebook
 
+## Tool use
+
+For Xcode project operations, prefer XcodeBuildMCP tools over invoking Xcode CLI commands (eg. xcodebuild) directly
+Use Xcode's MCP tools for Xcode IDE-specific operations when available
+Fall back to shell commands only when the MCP tools cannot perform the task
+
 ## Style
-- Use explicit types in property declarations, don't rely on type inference
-- Avoid leaving redundant verbose comments. The code should be self-descriptive based on clear naming and code structure. Comments should be used only to explain non-obvious reasons for WHY things were architected that way.
+Use explicit types in property declarations
+Avoid leaving redundant comments
+The code should be self-descriptive based on clear naming and code structure
+Comments should be used only to explain non-obvious reasons for architecture choices
 
 ## Scope
-- Prefer current APIs over legacy compatibility patterns unless older OS support is explicitly required
+Prefer current APIs over legacy compatibility patterns unless older OS support is explicitly required
 
 ## Always Prefer These Replacements
-- `foregroundColor(...)` -> `foregroundStyle(...)`
-- `cornerRadius(...)` -> `clipShape(.rect(cornerRadius: ...))`
-- Old 1-parameter `onChange` -> new 0-parameter or 2-parameter `onChange` variants
-- `NavigationView` -> `NavigationStack`
-- Old `tabItem(...)` pattern -> modern `Tab` API
-- `Task.sleep(nanoseconds: ...)` -> `Task.sleep(for: ...)` with duration values like `.seconds(1)`
-- Manual Documents URL lookup -> `URL.documentsDirectory`
-- `UIGraphicsImageRenderer` (for SwiftUI rendering) -> `ImageRenderer`
-- `ForEach(Array(x.enumerated()), id: \.element.id)` -> `ForEach(x.enumerated(), id: \.element.id)`
-- `.clipShape(Circle())` -> `.clipShape(.circle)`
+`foregroundColor(...)` -> `foregroundStyle(...)`
+`cornerRadius(...)` -> `clipShape(.rect(cornerRadius: ...))`
+Old 1-parameter `onChange` -> new 0-parameter or 2-parameter `onChange` variants
+`NavigationView` -> `NavigationStack`
+Old `tabItem(...)` pattern -> modern `Tab` API
+`Task.sleep(nanoseconds: ...)` -> `Task.sleep(for: ...)` with duration values like `.seconds(1)`
+Manual Documents URL lookup -> `URL.documentsDirectory`
+`UIGraphicsImageRenderer` (for SwiftUI rendering) -> `ImageRenderer`
+`ForEach(Array(x.enumerated()), id: \.element.id)` -> `ForEach(x.enumerated(), id: \.element.id)`
+`.clipShape(Circle())` -> `.clipShape(.circle)`
 
 ## Closure semantics
-- Always do the `guard let self else { return }` opener in closures that capture `weak self`
-- Other than the aforementioned case, don't use single line closures to allow easy breakpointing
+Always do the `guard let self else { return }` opener in closures that capture `weak self`
+Other than the aforementioned case, don't use single line closures to allow easy breakpointing
 
 ## SwiftUI Interaction and Accessibility Defaults
-- Prefer `Button` over `onTapGesture` for tappable UI
-- Use `onTapGesture` only when tap count or tap location is specifically required
-- Prefer inline button labels with title + SF Symbol (`Button("Title", systemImage: "...")`) over image-only buttons
-- Avoid accessibility regressions caused by gesture-driven controls and missing labels
+Prefer `Button` over `onTapGesture` for tappable UI
+Use `onTapGesture` only when tap count or tap location is specifically required
+Prefer inline button labels with title + SF Symbol (`Button("Title", systemImage: "...")`) over image-only buttons
+Avoid accessibility regressions caused by gesture-driven controls and missing labels
 
 ## Observation, State, and View Structure
-- Avoid splitting large views into computed-property `some View` fragments; extract real subviews/types instead
-- A View should be purely declarative and call out to endpoints on its viewmodel. Don't implement behavior in Views.
-- Make all methods and properties private unless otherwise required.
-- Keep intelligent invalidation effective by using explicit subviews with `@Observable` data flow
-- Use `.assign` instead of `.sink` when you can so there's no need to store a Cancellable
+Avoid splitting large views into computed-property `some View` fragments; extract real subviews/types instead
+A View should be purely declarative and call out to endpoints on its viewmodel. Don't implement behavior in Views.
+Make all methods and properties private unless otherwise required.
+Keep intelligent invalidation effective by using explicit subviews with `@Observable` data flow
+Use `.assign` instead of `.sink` when you can so there's no need to store a Cancellable
 
 ## Typography and Text Formatting
-- Avoid hardcoded fonts like `.font(.system(size: ...))` in most cases
-- Prefer Dynamic Type-friendly text styles (`.body`, `.title`, etc.; optionally scaled styles on newer OSes)
-- Don’t overuse `fontWeight(...)`; use semantically correct text styles and `bold()` intentionally
-- Prefer Swift format styles over C-style formatting (`String(format: ...)` -> typed format styles such as `.number.precision(...)`)
+Avoid hardcoded fonts like `.font(.system(size: ...))` in most cases
+Prefer Dynamic Type-friendly text styles (`.body`, `.title`, etc.; optionally scaled styles on newer OSes)
+Don’t overuse `fontWeight(...)`; use semantically correct text styles and `bold()` intentionally
+Prefer Swift format styles over C-style formatting (`String(format: ...)` -> typed format styles such as `.number.precision(...)`)
 
 ## Navigation and Lists
-- In lists, avoid inline destination `NavigationLink` style that couples creation and destination
-- Prefer value-driven navigation with `navigationDestination(for:)` and related modern APIs
+In lists, avoid inline destination `NavigationLink` style that couples creation and destination
+Prefer value-driven navigation with `navigationDestination(for:)` and related modern APIs
 
 ## Concurrency and Main Threading
-- Do not paper over concurrency issues with repeated `DispatchQueue.main.async`
-- Use modern concurrency: `async` functions and `Task` calls
-- Try to keep `Task` outside viewmodels. Viewmodels should expose `async` functions and a `Task` is to be launched from the view
-- Fix isolation and async boundaries directly rather than forcing main-queue hops
+Do not paper over concurrency issues with repeated `DispatchQueue.main.async`
+Use modern concurrency: `async` functions and `Task` calls
+Try to keep `Task` outside viewmodels. Viewmodels should expose `async` functions and a `Task` is to be launched from the view
+Fix isolation and async boundaries directly rather than forcing main-queue hops
 
 ## Performance and Build Hygiene
-- Do not pack many unrelated types into one file; split by responsibility to help compile times and maintainability
-- Be skeptical of excessive `GeometryReader` usage and fixed frame sizes
-- Prefer modern layout alternatives when possible (e.g. `visualEffect`, `containerRelativeFrame`, layout APIs that preserve adaptivity)
+Do not pack many unrelated types into one file; split by responsibility to help compile times and maintainability
+Be skeptical of excessive `GeometryReader` usage and fixed frame sizes
+Prefer modern layout alternatives when possible (e.g. `visualEffect`, `containerRelativeFrame`, layout APIs that preserve adaptivity)
 
 ## Logging
-- Strive to use static strings in logs and put dynamic elements as additional info
+Strive to use static strings in logs and put dynamic elements as additional info
 
 ## Constants
-- For single file constants use `private enum Constants` at the top of the file with `static let` values.
+For single file constants use `private enum Constants` at the top of the file with `static let` values.
+
+## Testing
+No need to run the app in the simulator, I'll verify results myself.
