@@ -70,8 +70,7 @@ Treat the following rules as a practical baseline, not an exhaustive rulebook
 
 ## Tool use
 
-For Xcode project operations, prefer XcodeBuildMCP tools over invoking Xcode CLI commands (eg. xcodebuild) directly
-Use Xcode's MCP tools for Xcode IDE-specific operations when available
+For Xcode project operations, prefer xcode mcp tools over invoking Xcode CLI commands (eg. xcodebuild) directly
 Fall back to shell commands only when the MCP tools cannot perform the task
 
 ## Style
