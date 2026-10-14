@@ -261,7 +261,7 @@ function lowercase_filenames_in_dir() {
 # DateTimeOriginal == the time of the shutter actuation
 # CreateDate == the time that the file was written to storage
 function rename_files_using_exif() {
-    FORMAT='media_%Y-%m-%d_%H.%M.%S%%-c.%%le'
+    FORMAT='media-%Y%m%d-%H%M%S%%-c.%%le'
 
     # [0] lowercase all filenames & extensions of all supported media types + aae
     # exiftool -filename=%lf.%le -ext+ aae .
@@ -276,7 +276,7 @@ function rename_files_using_exif() {
     # QuickTime::CreationDate for MOV files. Uses the original timezone.
     exiftool -progress -ee -dateFormat "$FORMAT" '-FileName<CreationDate' -ext mov .
     # EXIF::DateTimeOriginal for images. Uses the original timezone.
-    exiftool -fixBase -progress -ee -dateFormat "$FORMAT" '-FileName<DateTimeOriginal' -ext jpg -ext png .
+    exiftool -fixBase -progress -ee -dateFormat "$FORMAT" '-FileName<DateTimeOriginal' -ext heic -ext jpg -ext png .
 }
 
 #
