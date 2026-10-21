@@ -70,7 +70,7 @@ alias ,resetdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 #
 # terminal and packages
 #
-alias bruu="brew update && brew upgrade"
+alias bruu="brew update && brew upgrade --no-ask"
 alias hp="history -p && echo '✅ history cleared'"
 
 #
