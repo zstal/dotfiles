@@ -6,6 +6,7 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
+	pager = delta
 
 [push]
 	autoSetupRemote = true
@@ -18,3 +19,8 @@
 
 [include]
 	path = ~/.gituser
+
+[delta]
+	line-numbers = true
+	navigate = true
+	side-by-side = true
