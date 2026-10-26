@@ -64,9 +64,17 @@ Default to surfacing uncertainty, not hiding it.
 Treat the following rules as a practical baseline, not an exhaustive rulebook
 
 ## Tool use
-
 For Xcode project operations, prefer xcode mcp tools over invoking Xcode CLI commands (eg. xcodebuild) directly
 Fall back to shell commands only when the MCP tools cannot perform the task
+
+## Web research
+- Search the web when answering questions about APIs,
+  frameworks, dependencies, or behavior that may have
+  changed since the model's training.
+- Prefer official documentation and primary sources.
+- Do not rely solely on model knowledge for version-
+  specific or recently introduced features.
+- Cite sources when using web research.
 
 ## Style
 Use explicit types in property declarations
