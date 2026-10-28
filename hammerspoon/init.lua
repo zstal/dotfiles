@@ -13,7 +13,7 @@ hs.hotkey.bind(hyper, 'K', hs.console.clearConsole)
 
 hs.fnutils.each({
   { key = '`', app = 'Sublime Text' },
-  { key = '1', app = 'Terminal' },
+  { key = '1', app = 'Ghostty' },
   { key = '2', app = 'Finder' },
   { key = '3', app = 'Fork' },
 }, function(item)

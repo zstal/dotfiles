@@ -5,6 +5,8 @@
       mode: 0700
     ~/.config/:
       mode: 0700
+    ~/.config/ghostty:
+      mode: 0700
     ~/.config/tmux:
       mode: 0700
     ~/.local/bin:
@@ -28,6 +30,8 @@
       path: agents/AGENTS.md
     ~/.claude/CLAUDE.md:
       path: agents/AGENTS.md
+    ~/.config/ghostty/config:
+      path: ghostty/config
     ~/.config/tmux/tmux.conf:
       path: tmux/tmux.conf
     ~/.gitconfig:
