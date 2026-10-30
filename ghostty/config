@@ -2,5 +2,5 @@ font-size = 18
 theme = Dracula
 window-padding-x = 10
 window-padding-y = 10
-window-width = 120
-window-height = 30
+window-width = 100
+window-height = 25
