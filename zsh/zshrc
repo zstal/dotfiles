@@ -101,8 +101,7 @@ function take() {
 # code & diff
 alias cld="claude --permission-mode auto"
 alias f="fork ."
-alias oc="opencode"
-alias s="subl"
+alias s="subl ."
 alias x="xed ."
 
 # misc command line
