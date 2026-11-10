@@ -9,7 +9,6 @@ brew 'git-delta'
 brew 'imagemagick'
 brew 'ripgrep'
 brew 'tarsnap'
-brew 'tmux'
 brew 'yt-dlp'
 brew 'zsh-syntax-highlighting'
 
