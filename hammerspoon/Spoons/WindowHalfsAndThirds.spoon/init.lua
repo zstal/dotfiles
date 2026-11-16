@@ -360,7 +360,10 @@ function obj.center(win)
    local win = win or hs.window.focusedWindow()
    if win then
       cacheWindow(win, "center")
-      win:centerOnScreen()
+      -- avoid centerOnScreen() which includes the Dock and menu bar
+      local frame = win:frame()
+      frame.center = win:screen():frame().center
+      win:setFrameInScreenBounds(frame)
    end
    return obj
 end
