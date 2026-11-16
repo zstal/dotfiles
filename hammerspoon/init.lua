@@ -36,13 +36,32 @@ end)
 --
 hs.loadSpoon('WindowHalfsAndThirds')
 
+local centerPaddingRatioX = 0.15
+local centerPaddingRatioY = 0.05
+
+local function centerWithPadding()
+  local win = hs.window.focusedWindow()
+  if not win then return end
+  local screen = win:screen():frame()
+  local paddingX = screen.w * centerPaddingRatioX
+  local paddingY = screen.h * centerPaddingRatioY
+  win:setFrame({
+    x = screen.x + paddingX,
+    y = screen.y + paddingY,
+    w = screen.w - paddingX * 2,
+    h = screen.h - paddingY * 2,
+  })
+end
+
+spoon.WindowHalfsAndThirds.center = centerWithPadding
+
 spoon.WindowHalfsAndThirds:bindHotkeys({
-  max_toggle  = { {'⌃', '⌘'}, 'X' },
-  left_half   = { {'⌃', '⌘'}, '1' },
-  center      = { {'⌃', '⌘'}, '2' },
-  right_half  = { {'⌃', '⌘'}, '3' },
-  -- top_half    = { {'⌃', '⌘'}, 'Up' },
   -- bottom_half = { {'⌃', '⌘'}, 'Down' },
+  -- max_toggle  = { {'⌃', '⌘'}, 'X' },
+  -- top_half    = { {'⌃', '⌘'}, 'Up' },
+  center      = { {'⌃', '⌘'}, '2' },
+  left_half   = { {'⌃', '⌘'}, '1' },
+  right_half  = { {'⌃', '⌘'}, '3' },
 })
 
 --
