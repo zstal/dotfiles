@@ -36,7 +36,7 @@ end)
 --
 hs.loadSpoon('WindowHalfsAndThirds')
 
-local centerPaddingRatioX = 0.15
+local centerPaddingRatioX = 0.10
 local centerPaddingRatioY = 0.05
 
 local function centerWithPadding()
