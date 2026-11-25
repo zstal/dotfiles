@@ -1,4 +1,5 @@
 # cask_args appdir: "~/Applications"
+
 cask 'alfred'
 cask 'appcleaner'
 cask 'brave-browser'
@@ -12,3 +13,4 @@ cask 'monitorcontrol'
 cask 'netnewswire'
 cask 'sanesidebuttons'
 cask 'sublime-text'
+cask 'visual-studio-code'
